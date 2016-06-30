@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "Gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  },
   "devDependencies": {
     "gulp": "^3.9.1"
   },

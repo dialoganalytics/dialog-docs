@@ -1,3 +1,286 @@
 ---
 title:
 ---
+
+<div class="container m-b-lg">
+  <div class="row">
+    <div class="col-sm-2">
+      <ul class="nav nav-bordered nav-stacked m-t-lg">
+        <li class="nav-header">Introduction</li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#authentication">Authentication</a></li>
+        <li><a href="#errors">Errors</a></li>
+
+        <li class="nav-divider"></li>
+
+        <li class="nav-header">Reference</li>
+        <li><a href="#track">Track</a></li>
+
+        <li class="nav-divider"></li>
+
+        <li class="nav-header">Metrics</li>
+        <li><a href="#active-users">Active Users</a></li>
+
+        <li><a href="#conversational-score">Conversational score</a></li>
+        <li><a href="#efficiency-score">Efficiency score</a></li>
+        <li><a href="#conciseness-score">Conciseness score</a></li>
+        <li><a href="#sentiment-score">Sentiment score</a></li>
+        <li><a href="#bot-latency">Bot latency</a></li>
+
+        <li><a href="#user-latency">User Latency</a></li>
+        <li><a href="#active-sessions">Active sessions</a></li>
+        <li><a href="#passive-sessions">Passive sessions</a></li>
+        <li><a href="#sporadic-sessions">Sporadic sessions</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-1">
+      <div class="page-header">
+        <h3>Introduction</h3>
+      </div>
+
+      <p class="lead">Getting started with Dialog takes just a few minutes once you’ve signed up for an account.</p>
+      <p>As of now the only way to interact with the API is via it's HTTP endpoint. Please take note that official wrappers for these languages are coming: Clojure, Go, Java, Node, PHP, Python, Ruby and .NET.</p>
+
+      <div class="page-header">
+        <h4 id="examples">Examples</h4>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body text-center">
+              <h3><a href="https://github.com/phildionne/messenger-ruby-bot/blob/master/bot.rb">Messenger</a></h3>
+              <h5>Ruby with hyperoslo/facebook-messenger</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body text-center">
+              <h3><a href="https://github.com/phildionne/telegram-ruby-bot/blob/master/bot.rb">Telegram</a></h3>
+              <h5>Ruby with atipugin/telegram-bot-ruby</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body text-center">
+              <h3><a href="https://github.com/phildionne/slack-node.js-bot/blob/master/bot.js">Slack</a></h3>
+              <h5>Node.js with howdyai/botkit</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body text-center">
+              <h3><a href="https://github.com/phildionne/kik-js-bot/blob/master/bot.js">Kik</a></h3>
+              <h5>Node.js with kikinteractive/kik-node</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h4 id="authentication">Authentication</h4>
+      </div>
+
+      <p>Authenticate your account when using the API by including your secret API key in the request. You can manage your API keys in the Dashboard. Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
+      <p>Authentication to the API is performed via the request's URL <strong>token</strong> parameter.</p>
+      <p>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.</p>
+
+      <div class="page-header">
+        <h4 id="errors">Errors</h4>
+      </div>
+
+      <p>Dialog uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, etc.), and codes in the 5xx range indicate an error with Dialog's servers.</p>
+
+      <p>Here are some examples of how to integrate Dialog with your bot. It takes about 5 minutes to get started.</p>
+
+      <hr class="invisible">
+      <hr class="invisible">
+
+      <div class="page-header">
+        <h3>Reference</h3>
+      </div>
+
+      <p>The Dialog API is organized around REST. Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. JSON is returned by all API responses, including errors, although our API libraries convert responses to appropriate language-specific objects.</p>
+
+      <div class="callout callout-primary">
+        <div class="callout-content">
+          <strong>Public sandbox bot</strong>
+            <p>All code examples use a public sandbox bot token which you may use to test code examples in this documentaion. Don't be shy, try it!</p>
+        </div>
+
+        <div class="callout-secondary">
+          <code><%= '@bot.token' %></code>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h4 id="track">Track</h4>
+      </div>
+
+      <p class="lead">A Message represents an interaction between your chatbot and a user. This action allows to track both sent and received messages.</p>
+
+      <h4>Request</h4>
+
+<pre>curl -XPOST -H "Content-type: application/json" -d '{
+  "message": {
+    "platform": "telegram",
+    "from": "user-id",
+    "to": "bot-id",
+    "type": "text",
+    "sent_at": "1462447199",
+    "distinct_id": "sfs78d6fsfg7-8sdfgsdfg7d7-8gbv8b8ub",
+    "conversation_id": "9903498383848",
+    "properties": {
+      "text": "Hello world"
+    }
+  }
+}' 'https://api.dialoganalytics.com/v1/messages?token=<%= '@bot.token' %>'</pre>
+
+      <h4 class="m-t-lg">Attributes</h4>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p><strong>platform</strong></p>
+              <span class="label label-primary">Required</span>
+            </td>
+            <td>
+              The platform on which the message is sent. Possible values: <code>telegram</code>, <code>messenger</code>, <code>kik</code>, <code>slack</code>, <code>line</code>, <code>wechat</code>.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>from</strong></p>
+              <span class="label label-primary">Required</span>
+            </td>
+            <td>
+              ID of sender while receiving a message from the chatbot's perspective.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>to</strong></p>
+              <span class="label label-primary">Required</span>
+            </td>
+            <td>
+              ID of recipient while sending a message from the chatbot's perspective.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>type</strong></p>
+              <span class="label label-primary">Required</span>
+            </td>
+            <td>
+              Message type. Possible values: <code>text</code>, <code>command</code>, <code>video</code>, <code>image</code>, <code>template_generic</code>, <code>template_button</code>, <code>template_receipt</code>, <code>audio</code>, <code>document</code>, <code>sticker</code>, <code>link</code>, <code>scan_data</code>, <code>voice</code>, <code>caption</code>, <code>contact</code>, <code>location</code>, <code>venue</code>.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>sent_at</strong></p>
+              <span class="label label-primary">Required</span>
+            </td>
+            <td>
+              Unix timestamp
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>distinct_id</strong></p>
+              <span class="label label-default">Optional</span>
+            </td>
+            <td>
+              The original message's ID on the issuing platform.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>conversation_id</strong></p>
+              <span class="label label-default">Optional</span>
+            </td>
+            <td>
+              The conversation or chat ID in which the original message has been issued.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>properties</strong></p>
+              <span class="label label-default">Optional</span>
+            </td>
+            <td>
+              Additional message properties. For example, while tracking a message of type text you should include the actual message text content.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-header">
+        <h3>Metrics</h3>
+      </div>
+
+      <p>Here is the comprehensive list of Dialog's conversational-first metrics.</p>
+
+      <div class="page-header">
+        <h4 id="active-users">Active Users</h4>
+      </div>
+      <p>How many unique users interact at least once with the bot throughout the day.</p>
+
+      <div class="page-header">
+        <h4 id="conversational-score">Conversational Score</h4>
+      </div>
+      <p>Dialog's proprietary score indicating the conversation's quality. It combines Dialog's most important metrics together in order to give a quantifiable and objective representation of the interaction's quality.</p>
+
+      <div class="page-header">
+        <h4 id="sentiment-score">Sentiment Score</h4>
+      </div>
+      <p>Sentiment associated to a body of text.</p>
+
+      <div class="page-header">
+        <h4 id="efficiency-score">Efficiency Score</h4>
+      </div>
+      <p>Efficiency measured according to the bot's conversation length optmization strategy.</p>
+
+      <div class="page-header">
+        <h4 id="conciseness-score">Conciseness Score</h4>
+      </div>
+      <p>Conciseness of a conversation measured as the number of turns in the conversation.</p>
+
+      <div class="page-header">
+        <h4 id="bot-latency">Bot Latency</h4>
+      </div>
+      <p>Latency between messages sent by a bot.</p>
+
+      <div class="page-header">
+        <h4 id="user-latency">User Latency</h4>
+      </div>
+      <p>Latency between messages sent by a user.</p>
+
+      <div class="page-header">
+        <h4 id="active-sessions">Active sessions</h4>
+      </div>
+      <p>An active chat session is one in which the chatter is fully focused on a conversation and will send a message to her correspondent within 20 seconds of the previous one. For instance, an intense back-and-forward between girlfriend and boyfriend would qualify as an active chat.</p>
+
+      <div class="page-header">
+        <h4 id="passive-sessions">Passive sessions</h4>
+      </div>
+      <p>Someone in a passive chat session, meanwhile, is not so engaged and might take several minutes to send another message. This is the sort of on-again, off-again conversation you might have with a friend while you’re slightly distracted, perhaps while watching TV or cooking dinner.</p>
+
+      <div class="page-header">
+        <h4 id="sporadic-sessions">Sporadic sessions</h4>
+      </div>
+      <p>A chatter in a sporadic chat session will just check and send messages occasionally throughout the day.</p>
+
+    </div>
+  </div>
+</div>

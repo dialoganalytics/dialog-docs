@@ -5,8 +5,11 @@
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <%= partial "meta", locals: {
+      title: current_page.data.title || "Dialog - Documentation",
+      description: current_page.data.description || "Read Dialog's full technical documentation to learn how to make the most of our bot analytics platform for developers.",
+      keywords: current_page.data.keywords || "bot, chatbot, analytics, conversational, messages, chat"
+    } %>
 
     <%= stylesheet_link_tag :site %>
     <%= javascript_include_tag :all %>

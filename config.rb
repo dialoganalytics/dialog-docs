@@ -38,6 +38,8 @@ end
 
 # Build-specific configuration
 configure :build do
+  ignore 'stylesheets/components/*'
+
   # Minify CSS on build
   # activate :minify_css
 

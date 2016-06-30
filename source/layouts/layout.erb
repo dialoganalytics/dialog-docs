@@ -10,7 +10,8 @@
     <%= partial "meta", locals: {
       title: current_page.data.title || "Dialog - Documentation",
       description: current_page.data.description || "Read Dialog's full technical documentation to learn how to make the most of our bot analytics platform for developers.",
-      keywords: current_page.data.keywords || "bot, chatbot, analytics, conversational, messages, chat"
+      keywords: current_page.data.keywords || "bot, chatbot, analytics, conversational, messages, chat",
+      url: current_page.url
     } %>
 
     <%= stylesheet_link_tag :site %>

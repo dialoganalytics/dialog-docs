@@ -9,8 +9,6 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-activate :directory_indexes
-
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
 
@@ -19,6 +17,10 @@ activate :directory_indexes
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
+
+config[:host] = "http://docs.dialoganalytics.com"
+
+activate :directory_indexes
 
 # Reload the browser automatically whenever files change
 configure :development do

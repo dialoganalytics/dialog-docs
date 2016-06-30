@@ -6,18 +6,18 @@
 <meta name="keywords" content="<%= keywords %>">
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="http://docs.dialoganalytics.com">
+<link rel="canonical" href="<%= URI.join(config[:host], url) %>">
 <meta name="referrer" content="origin">
 
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" sizes="196x196" href="/assets/images/android-homescreen.png">
-<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" href="http://dialoganalytics.com/images/favicon.ico">
+<link rel="icon" sizes="196x196" href="http://dialoganalytics.com/images/android-homescreen.png">
+<link rel="apple-touch-icon" href="http://dialoganalytics.com/images/apple-touch-icon.png">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="<%= title %>">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="http://docs.dialoganalytics.com">
+<meta property="og:url" content="<%= URI.join(config[:host], url) %>">
 <meta property="og:description" content="<%= description %>">
 <meta property="og:site_name" content="Dialog Analytics">
 <meta property="og:image" content="http://dialoganalytics.com/images/og-image.png">
@@ -26,5 +26,5 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<%= title %>">
 <meta name="twitter:description" content="<%= description %>">
-<meta name="twitter:url" content="http://docs.dialoganalytics.com">
+<meta name="twitter:url" content="<%= URI.join(config[:host], url) %>">
 <meta name="twitter:image:src" content="http://dialoganalytics.com/images/twitter-image.png">

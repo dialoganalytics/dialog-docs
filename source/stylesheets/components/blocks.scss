@@ -1,0 +1,44 @@
+.block-inverse {
+  color: $gray-light;
+  background-color: $block-bg-inverted;
+
+  a {
+    color: $block-color-inverted;
+  }
+
+  &.block-bordered:before,
+  hr {
+    border-color: rgba(255, 255, 255, .2);
+  }
+
+  h1,h2,h3,h4,h5,h6,
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    color: #fff;
+  }
+
+  .text-muted {
+    color: $gray-light;
+  }
+
+  .btn-outline.btn-default {
+    @include button-outline-variant(#fff);
+  }
+
+  .btn-outline.btn-default,
+  .btn-outline {
+    &:focus,
+    &.focus,
+    &:hover,
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+      color: #000;
+
+      &:hover,
+      &:focus,
+      &.focus {
+        color: #000;
+      }
+    }
+  }
+}

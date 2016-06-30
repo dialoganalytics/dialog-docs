@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
     <%= partial "meta", locals: {
       title: current_page.data.title || "Dialog - Documentation",
       description: current_page.data.description || "Read Dialog's full technical documentation to learn how to make the most of our bot analytics platform for developers.",
@@ -18,4 +20,7 @@
   <body class="<%= page_classes %>">
     <%= yield %>
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>

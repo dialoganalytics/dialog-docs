@@ -20,6 +20,7 @@ page '/*.txt', layout: false
 
 config[:host] = "https://docs.dialoganalytics.com"
 
+activate :asset_hash
 activate :directory_indexes
 
 # Reload the browser automatically whenever files change

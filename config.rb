@@ -18,7 +18,7 @@ page '/*.txt', layout: false
 
 # General configuration
 
-config[:host] = "http://docs.dialoganalytics.com"
+config[:host] = "https://docs.dialoganalytics.com"
 
 activate :directory_indexes
 

@@ -28,7 +28,7 @@ s3_bucket: docs.dialoganalytics.com
 
 # s3_reduced_redundancy: true
 
-# cloudfront_distribution_id: your-dist-id
+cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DISTRIBUTION_ID'] %>
 
 # cloudfront_distribution_config:
 #   default_cache_behavior:
@@ -38,7 +38,7 @@ s3_bucket: docs.dialoganalytics.com
 #     items:
 #       CNAME: your.website.com
 
-# cloudfront_invalidate_root: true
+cloudfront_invalidate_root: true
 
 # concurrency_level: 5
 

@@ -144,7 +144,7 @@ keywords:
         <h4 id="track">Track</h4>
       </div>
 
-      <p class="lead">A Message represents an interaction between your chatbot and a user. This action allows to track both sent and received messages.</p>
+      <p class="lead">A Message represents an interaction between your bot and a user. This action allows to track both <strong>sent</strong> and <strong>received</strong> messages.</p>
 
       <h4>Request</h4>
 
@@ -188,7 +188,7 @@ keywords:
               <span class="label label-primary">Required</span>
             </td>
             <td>
-              ID of sender while receiving a message from the chatbot's perspective.
+              ID of sender while receiving a message from the bot's perspective. For an inbound message, <code>from</code> would equal <code>some-user-id</code>.
             </td>
           </tr>
           <tr>
@@ -196,57 +196,47 @@ keywords:
               <p><strong>to</strong></p>
               <span class="label label-primary">Required</span>
             </td>
-            <td>
-              ID of recipient while sending a message from the chatbot's perspective.
-            </td>
+            <td>ID of recipient while sending a message from the bot's perspective. For an outbound message <code>to</code> would equal <code>some-user-id</code>.</td>
           </tr>
           <tr>
             <td>
               <p><strong>type</strong></p>
               <span class="label label-primary">Required</span>
             </td>
-            <td>
-              Message type. Possible values: <code>text</code>, <code>command</code>, <code>video</code>, <code>image</code>, <code>template_generic</code>, <code>template_button</code>, <code>template_receipt</code>, <code>audio</code>, <code>document</code>, <code>sticker</code>, <code>link</code>, <code>scan_data</code>, <code>voice</code>, <code>caption</code>, <code>contact</code>, <code>location</code>, <code>venue</code>.
-            </td>
+            <td>Message type. Possible values: <code>text</code>, <code>command</code>, <code>video</code>, <code>image</code>, <code>template_generic</code>, <code>template_button</code>, <code>template_receipt</code>, <code>audio</code>, <code>document</code>, <code>sticker</code>, <code>link</code>, <code>scan_data</code>, <code>voice</code>, <code>caption</code>, <code>contact</code>, <code>location</code>, <code>venue</code>.</td>
           </tr>
           <tr>
             <td>
               <p><strong>sent_at</strong></p>
               <span class="label label-primary">Required</span>
             </td>
-            <td>
-              Unix timestamp
-            </td>
+            <td>Unix timestamp</td>
           </tr>
           <tr>
             <td>
               <p><strong>distinct_id</strong></p>
               <span class="label label-default">Optional</span>
             </td>
-            <td>
-              The original message's ID on the issuing platform.
-            </td>
+            <td>The original message's ID on the issuing platform.</td>
           </tr>
           <tr>
             <td>
               <p><strong>conversation_id</strong></p>
               <span class="label label-default">Optional</span>
             </td>
-            <td>
-              The conversation or chat ID in which the original message has been issued.
-            </td>
+            <td>The conversation or chat ID in which the original message has been issued.</td>
           </tr>
           <tr>
             <td>
               <p><strong>properties</strong></p>
               <span class="label label-default">Optional</span>
             </td>
-            <td>
-              Additional message properties. For example, while tracking a message of type text you should include the actual message text content.
-            </td>
+            <td>Additional message properties. For example, while tracking a message of type text you should include the actual message text content.</td>
           </tr>
         </tbody>
       </table>
+
+      <hr class="invisible">
 
       <div class="page-header">
         <h3>Metrics</h3>
@@ -303,7 +293,6 @@ keywords:
         <h4 id="sporadic-sessions">Sporadic sessions</h4>
       </div>
       <p>A chatter in a sporadic chat session will just check and send messages occasionally throughout the day.</p>
-
     </div>
   </div>
 </div>

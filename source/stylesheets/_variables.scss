@@ -8,18 +8,18 @@ $bootstrap-sass-asset-helper: false;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #0c0d0e;
-$gray-darker:            lighten($gray-base, 13.5%); // #2c2f33
-$gray-dark:              lighten($gray-base, 20%);   // #3b4045
-$gray:                   lighten($gray-base, 33.5%); // #5b626a
-$gray-light:             lighten($gray-base, 46.7%); // #7a848e
-$gray-lighter:           #e1e8ee;
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              #606c76; // lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
-$brand-primary:         #348fd6;
-$brand-success:         #7ec855;
-$brand-info:            #838cc7;
-$brand-warning:         #f8e71b;
-$brand-danger:          #ee4f2d;
+$brand-primary:         #9b4dca; // darken(#428bca, 6.5%); // #337ab7
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
 
 
 //== Scaffolding
@@ -34,7 +34,7 @@ $text-color:            $gray-dark;
 //** Global textual link color.
 $link-color:            $brand-primary;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%);
+$link-hover-color:      #606c76; //darken($link-color, 15%);
 //** Link hover decoration.
 $link-hover-decoration: underline;
 
@@ -43,13 +43,13 @@ $link-hover-decoration: underline;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif;
 
-$font-size-base:          15px; // 14px;
+$font-size-base:          16px;
 $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 
@@ -61,15 +61,15 @@ $font-size-h5:            $font-size-base;
 $font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.4; // 1.428571429; // 20/14
+$line-height-base:        1.6; // 1.428571429; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit;
-$headings-font-weight:    500;
-$headings-line-height:    1.2; // 1.1;
-$headings-color:          $gray; // inherit;
+$headings-font-weight:    300;
+$headings-line-height:    1.1;
+$headings-color:          inherit;
 
 
 //== Iconography
@@ -147,9 +147,9 @@ $table-border-color:            #ddd;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                400; // normal;
+$btn-font-weight:                normal;
 
-$btn-default-color:              $gray-dark;
+$btn-default-color:              #333;
 $btn-default-bg:                 #fff;
 $btn-default-border:             #ccc;
 
@@ -193,7 +193,7 @@ $input-bg-disabled:              $gray-lighter;
 //** Text color for `<input>`s
 $input-color:                    $gray;
 //** `<input>` border color
-$input-border:                   $gray-lighter;
+$input-border:                   #ccc;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -205,7 +205,7 @@ $input-border-radius-large:      $border-radius-large;
 $input-border-radius-small:      $border-radius-small;
 
 //** Border color for inputs on focus
-$input-border-focus:             #66afe9;
+$input-border-focus:             $brand-primary; // #66afe9;
 
 //** Placeholder text color
 $input-color-placeholder:        #999;
@@ -369,13 +369,13 @@ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2));
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2);
 $navbar-collapse-max-height:       340px;
 
-$navbar-default-color:             $gray-light;
-$navbar-default-bg:                #f8f8f8;
+$navbar-default-color:             #606c76;
+$navbar-default-bg:                #f4f5f6;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%);
 
 // Navbar links
-$navbar-default-link-color:                $gray-light;
-$navbar-default-link-hover-color:          $gray-dark;
+$navbar-default-link-color:                #9b4dca;
+$navbar-default-link-hover-color:          #606c76;
 $navbar-default-link-hover-bg:             transparent;
 $navbar-default-link-active-color:         #555;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
@@ -396,7 +396,7 @@ $navbar-default-toggle-border-color:       #ddd;
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      lighten($gray-light, 15%);
-$navbar-inverse-bg:                         $gray-dark;
+$navbar-inverse-bg:                         #222;
 $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%);
 
 // Inverted navbar links
@@ -414,9 +414,9 @@ $navbar-inverse-brand-hover-color:          #fff;
 $navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
-$navbar-inverse-toggle-hover-bg:            $gray-dark;
+$navbar-inverse-toggle-hover-bg:            #333;
 $navbar-inverse-toggle-icon-bar-bg:         #fff;
-$navbar-inverse-toggle-border-color:        $gray-dark;
+$navbar-inverse-toggle-border-color:        #333;
 
 
 //== Navs
@@ -700,7 +700,7 @@ $list-group-disabled-text-color: $list-group-disabled-color;
 
 $list-group-link-color:         #555;
 $list-group-link-hover-color:   $list-group-link-color;
-$list-group-link-heading-color: $gray-dark;
+$list-group-link-heading-color: #333;
 
 
 //== Panels
@@ -719,7 +719,7 @@ $panel-footer-bg:             #f5f5f5;
 
 $panel-default-text:          $gray-dark;
 $panel-default-border:        #ddd;
-$panel-default-heading-bg:    transparent;
+$panel-default-heading-bg:    #f5f5f5;
 
 $panel-primary-text:          #fff;
 $panel-primary-border:        $brand-primary;
@@ -838,7 +838,7 @@ $code-color:                  #c7254e;
 $code-bg:                     #f9f2f4;
 
 $kbd-color:                   #fff;
-$kbd-bg:                      $gray-dark;
+$kbd-bg:                      #333;
 
 $pre-bg:                      #f5f5f5;
 $pre-color:                   $gray-dark;

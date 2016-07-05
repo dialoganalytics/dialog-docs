@@ -1,31 +1,3 @@
-// Navbar - transparent
-$navbar-transparent-color:               #777;
-$navbar-transparent-bg:                  transparent;
-$navbar-transparent-border:              transparent;
-$navbar-transparent-link-color:          $navbar-transparent-color;
-$navbar-transparent-link-hover-color:    darken($navbar-transparent-color, 10%);
-$navbar-transparent-link-hover-bg:       transparent;
-$navbar-transparent-link-active-color:   $navbar-transparent-link-hover-color;
-$navbar-transparent-link-active-bg:      transparent;
-$navbar-transparent-link-disabled-color: lighten($navbar-transparent-color, 10%);
-$navbar-transparent-link-disabled-bg:    transparent;
-$navbar-transparent-brand-color:         $navbar-transparent-color;
-$navbar-transparent-brand-hover-color:   darken($navbar-transparent-color, 10%);
-$navbar-transparent-brand-hover-bg:      transparent;
-$navbar-transparent-toggle-hover-bg:     fade($navbar-transparent-color, 10%);
-$navbar-transparent-toggle-icon-bar-bg:  $navbar-transparent-color;
-$navbar-transparent-toggle-border-color: $navbar-transparent-color;
-
 // Callouts
 $callout-padding:       15px 20px;
 $callout-border-radius: $border-radius-base;
-
-// nav-bordered
-$nav-bordered-color:              #000;
-$nav-bordered-color-active:       $brand-primary;
-$nav-bordered-font-weight:        300;
-$nav-bordered-font-weight-active: 700;
-
-// blocks
-$block-color-inverted: #fff;
-$block-bg-inverted:    #000;

@@ -1,0 +1,17 @@
+// Overides
+
+pre {
+  border-left: .3rem solid $brand-primary;
+  color: #655d5d;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.panel {
+  border-width: .2rem;
+}

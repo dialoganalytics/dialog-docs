@@ -4,7 +4,7 @@ description:
 keywords:
 ---
 
-<div class="container m-b-lg">
+<div class="container">
   <div class="row">
     <div class="col-sm-2">
       <ul class="nav nav-bordered nav-stacked m-t-lg">
@@ -12,6 +12,8 @@ keywords:
         <li><a href="#examples">Examples</a></li>
         <li><a href="#authentication">Authentication</a></li>
         <li><a href="#errors">Errors</a></li>
+        <li><a href="#rate-limiting">Rate limiting</a></li>
+        <li><a href="#versioning">Versioning</a></li>
 
         <li class="nav-divider"></li>
 
@@ -37,16 +39,12 @@ keywords:
     </div>
 
     <div class="col-sm-9 col-sm-offset-1">
-      <div class="page-header">
-        <h3>Introduction</h3>
-      </div>
+      <h2 class="page-header">Introduction</h2>
 
       <p class="lead">Getting started with Dialog takes just a few minutes once you’ve signed up for an account.</p>
       <p>As of now the only way to interact with the API is via it's HTTP endpoint. Please take note that official wrappers for these languages are coming: Clojure, Go, Java, Node, PHP, Python, Ruby and .NET.</p>
 
-      <div class="page-header">
-        <h4 id="examples">Examples</h4>
-      </div>
+      <h3 class="page-header" id="examples">Examples</h3>
 
       <div class="row">
         <div class="col-sm-6">
@@ -107,25 +105,49 @@ keywords:
         </div>
       </div>
 
-      <div class="page-header">
-        <h4 id="authentication">Authentication</h4>
-      </div>
-
+      <h3 class="page-header" id="authentication">Authentication</h3>
       <p>Authenticate your account when using the API by including your secret API key in the request. You can manage your API keys in the Dashboard. Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
       <p>Authentication to the API is performed via the request's URL <strong>token</strong> parameter.</p>
       <p>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.</p>
 
-      <div class="page-header">
-        <h4 id="errors">Errors</h4>
-      </div>
-
+      <h3 class="page-header" id="errors">Errors</h3>
       <p>Dialog uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, etc.), and codes in the 5xx range indicate an error with Dialog's servers.</p>
+
+      <h3 class="page-header" id="rate-limiting">Rate Limiting</h3>
+      <p>You can make the number of requests your plan allows you to do. Check the returned HTTP headers of any API request to see your current rate limit status. If you’re running into this error or think you’ll need a higher rate limit, drop us a line at friends@dialoganalytics.com.</p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>X-RateLimit-Limit</td>
+            <td>The maximum number of requests that the consumer is permitted to make per month.</td>
+          </tr>
+          <tr>
+            <td>X-RateLimit-Remaining</td>
+            <td>The number of requests remaining in the current rate limit window.</td>
+          </tr>
+          <tr>
+            <td>X-RateLimit-Reset</td>
+            <td>The time at which the current rate limit window resets in UTC epoch seconds.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Once you go over the rate limit you will receive a <code>429</code> <strong>Too Many Requests</strong> error response.</p>
+
+      <h3 class="page-header" id="versioning">Versioning</h3>
+      <p>When we make backwards-incompatible changes to our API, we release new dated versions. The latest version is <code>v1</code>.</p>
+
 
       <hr class="invisible">
 
-      <div class="page-header">
-        <h3>Reference</h3>
-      </div>
+      <h2 class="page-header">Reference</h2>
 
       <p>The Dialog API is organized around REST. Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. JSON is returned by all API responses, including errors, although our API libraries convert responses to appropriate language-specific objects.</p>
 
@@ -140,13 +162,11 @@ keywords:
         </div>
       </div>
 
-      <div class="page-header">
-        <h4 id="track">Track</h4>
-      </div>
+      <h3 class="page-header" id="track">Track</h3>
 
       <p class="lead">A Message represents an interaction between your bot and a user. This action allows to track both <strong>sent</strong> and <strong>received</strong> messages.</p>
 
-      <h4>Request</h4>
+      <h4 class="page-header">Request</h4>
 
 <pre>curl -XPOST -H "Content-type: application/json" -d '{
   "message": {
@@ -163,135 +183,155 @@ keywords:
   }
 }' 'https://api.dialoganalytics.com/v1/messages?token=XJ2ws4jZsUwHmPBfsQMj82EP'</pre>
 
-      <h4 class="m-t-lg">Attributes</h4>
+      <h4 class="page-header">Parameters</h4>
 
       <table class="table">
         <thead>
           <tr>
-            <th></th>
-            <th></th>
+            <th>Param</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
-              <p><strong>platform</strong></p>
-              <span class="label label-primary">Required</span>
+              <i>platform</i>
             </td>
             <td>
-              The platform on which the message is sent. Possible values: <code>telegram</code>, <code>messenger</code>, <code>kik</code>, <code>slack</code>, <code>line</code>, <code>wechat</code>.
+              <strong>string</strong> <span class="label label-primary">Required</span>
+              <p>The platform on which the message is sent. Possible values: <code>telegram</code>, <code>messenger</code>, <code>kik</code>, <code>slack</code>, <code>line</code>, <code>wechat</code>.</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p><strong>from</strong></p>
-              <span class="label label-primary">Required</span>
+              <i>from</i>
             </td>
             <td>
-              ID of sender while receiving a message from the bot's perspective. For an inbound message, <code>from</code> would equal <code>some-user-id</code>.
+              <strong>string</strong> <span class="label label-primary">Required</span>
+              <p>ID of sender while receiving a message from the bot's perspective. For an inbound message, <code>from</code> would equal <code>some-user-id</code>.</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p><strong>to</strong></p>
-              <span class="label label-primary">Required</span>
+              <i>to</i>
             </td>
-            <td>ID of recipient while sending a message from the bot's perspective. For an outbound message <code>to</code> would equal <code>some-user-id</code>.</td>
+            <td>
+              <strong>string</strong> <span class="label label-primary">Required</span>
+              <p>ID of recipient while sending a message from the bot's perspective. For an outbound message <code>to</code> would equal <code>some-user-id</code>.</p>
+            </td>
           </tr>
           <tr>
             <td>
-              <p><strong>type</strong></p>
-              <span class="label label-primary">Required</span>
+              <i>type</i>
             </td>
-            <td>Message type. Possible values: <code>text</code>, <code>command</code>, <code>video</code>, <code>image</code>, <code>template_generic</code>, <code>template_button</code>, <code>template_receipt</code>, <code>audio</code>, <code>document</code>, <code>sticker</code>, <code>link</code>, <code>scan_data</code>, <code>voice</code>, <code>caption</code>, <code>contact</code>, <code>location</code>, <code>venue</code>.</td>
+            <td>
+              <strong>string</strong> <span class="label label-primary">Required</span>
+              <p>Message type. Possible values: <code>text</code>, <code>command</code>, <code>video</code>, <code>image</code>, <code>template_generic</code>, <code>template_button</code>, <code>template_receipt</code>, <code>audio</code>, <code>document</code>, <code>sticker</code>, <code>link</code>, <code>scan_data</code>, <code>voice</code>, <code>caption</code>, <code>contact</code>, <code>location</code>, <code>venue</code>.</p>
+            </td>
           </tr>
           <tr>
             <td>
-              <p><strong>sent_at</strong></p>
-              <span class="label label-primary">Required</span>
+              <i>sent_at</i>
             </td>
-            <td>Unix timestamp</td>
+            <td>
+              <strong>integer</strong> <span class="label label-primary">Required</span>
+              <p>Timestamp in UTC epoch seconds.</p>
+            </td>
           </tr>
           <tr>
             <td>
-              <p><strong>distinct_id</strong></p>
-              <span class="label label-default">Optional</span>
+              <i>distinct_id</i>
             </td>
-            <td>The original message's ID on the issuing platform.</td>
+            <td>
+              <strong>string</strong> <span class="label label-default">Optional</span>
+              <p>The original message's ID on the issuing platform.</p>
+            </td>
           </tr>
           <tr>
             <td>
-              <p><strong>conversation_id</strong></p>
-              <span class="label label-default">Optional</span>
+              <i>properties</i>
             </td>
-            <td>The conversation or chat ID in which the original message has been issued.</td>
+            <td>
+              <strong>hash</strong> <span class="label label-default">Optional</span>
+              <p>Additional message properties. See <a href="#track-properties-parameters">properties parameters</a> for more details.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 class="page-header" id="track-properties-parameters">Properties parameters</h5>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Param</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <i>text</i>
+            </td>
+            <td>
+              <strong>string</strong> <span class="label label-default">Optional</span>
+              <p>Text content of a message. <strong>Required</strong> for a <code>text</code> message type.</p>
+            </td>
           </tr>
           <tr>
             <td>
-              <p><strong>properties</strong></p>
-              <span class="label label-default">Optional</span>
+              <i>confidence</i>
             </td>
-            <td>Additional message properties. For example, while tracking a message of type text you should include the actual message text content.</td>
+            <td>
+              <strong>string</strong> <span class="label label-default">Optional</span>
+              <p>Natural Language Processing (NLP) overall confidence in the entity extraction performed, if any.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i>conversation_id</i>
+            </td>
+            <td>
+              <strong>string</strong> <span class="label label-default">Optional</span>
+              <p>The conversation or chat ID in which the original message has been issued.</p>
+            </td>
           </tr>
         </tbody>
       </table>
 
       <hr class="invisible">
 
-      <div class="page-header">
-        <h3>Metrics</h3>
-      </div>
-
+      <h2 class="page-header">Metrics</h2>
       <p>Here is the comprehensive list of Dialog's conversational-first metrics.</p>
 
-      <div class="page-header">
-        <h4 id="active-users">Active Users</h4>
-      </div>
+      <h3 class="page-header" id="active-users">Active Users</h3>
       <p>How many unique users interact at least once with the bot throughout the day.</p>
 
-      <div class="page-header">
-        <h4 id="conversational-score">Conversational Score</h4>
-      </div>
+      <h3 class="page-header" id="conversational-score">Conversational Score</h3>
       <p>Dialog's proprietary score indicating the conversation's quality. It combines Dialog's most important metrics together in order to give a quantifiable and objective representation of the interaction's quality.</p>
 
-      <div class="page-header">
-        <h4 id="sentiment-score">Sentiment Score</h4>
-      </div>
+      <h3 class="page-header" id="sentiment-score">Sentiment Score</h3>
       <p>Sentiment associated to a body of text.</p>
 
-      <div class="page-header">
-        <h4 id="efficiency-score">Efficiency Score</h4>
-      </div>
+      <h3 class="page-header" id="efficiency-score">Efficiency Score</h3>
       <p>Efficiency measured according to the bot's conversation length optmization strategy.</p>
 
-      <div class="page-header">
-        <h4 id="conciseness-score">Conciseness Score</h4>
-      </div>
+      <h3 class="page-header" id="conciseness-score">Conciseness Score</h3>
       <p>Conciseness of a conversation measured as the number of turns in the conversation.</p>
 
-      <div class="page-header">
-        <h4 id="bot-latency">Bot Latency</h4>
-      </div>
+      <h3 class="page-header" id="bot-latency">Bot Latency</h3>
       <p>Latency between messages sent by a bot.</p>
 
-      <div class="page-header">
-        <h4 id="user-latency">User Latency</h4>
-      </div>
+      <h3 class="page-header" id="user-latency">User Latency</h3>
       <p>Latency between messages sent by a user.</p>
 
-      <div class="page-header">
-        <h4 id="active-sessions">Active sessions</h4>
-      </div>
+      <h3 class="page-header" id="active-sessions">Active sessions</h3>
       <p>An active chat session is one in which the chatter is fully focused on a conversation and will send a message to her correspondent within 20 seconds of the previous one. For instance, an intense back-and-forward between girlfriend and boyfriend would qualify as an active chat.</p>
 
-      <div class="page-header">
-        <h4 id="passive-sessions">Passive sessions</h4>
-      </div>
+      <h3 class="page-header" id="passive-sessions">Passive sessions</h3>
       <p>Someone in a passive chat session, meanwhile, is not so engaged and might take several minutes to send another message. This is the sort of on-again, off-again conversation you might have with a friend while you’re slightly distracted, perhaps while watching TV or cooking dinner.</p>
 
-      <div class="page-header">
-        <h4 id="sporadic-sessions">Sporadic sessions</h4>
-      </div>
+      <h3 class="page-header" id="sporadic-sessions">Sporadic sessions</h3>
       <p>A chatter in a sporadic chat session will just check and send messages occasionally throughout the day.</p>
     </div>
   </div>

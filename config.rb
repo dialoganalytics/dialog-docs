@@ -28,6 +28,21 @@ configure :development do
   activate :livereload
 end
 
+# Build-specific configuration
+configure :build do
+  ignore 'stylesheets/components/*'
+
+  # Minify CSS on build
+  activate :minify_css
+
+  # Minify Javascript on build
+  activate :minify_javascript
+
+  activate :minify_html
+
+  activate :gzip
+end
+
 ###
 # Helpers
 ###
@@ -38,14 +53,3 @@ end
 #     "Helping"
 #   end
 # end
-
-# Build-specific configuration
-configure :build do
-  ignore 'stylesheets/components/*'
-
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
-end

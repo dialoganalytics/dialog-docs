@@ -32,6 +32,9 @@ end
 configure :build do
   ignore 'stylesheets/components/*'
 
+  # Temporarily
+  ignore 'metrics.html'
+
   # Minify CSS on build
   activate :minify_css
 

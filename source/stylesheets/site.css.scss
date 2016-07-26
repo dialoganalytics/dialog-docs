@@ -18,6 +18,11 @@
 // Scaffolding
 ////////////////////////////////////////////////////////////////////////////////
 
+#main {
+  border: 1px solid $panel-inner-border;
+  background-color: #FFF;
+}
+
 // Header
 #header {
   .navbar {

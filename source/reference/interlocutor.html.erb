@@ -1,0 +1,110 @@
+<div class="container" id="main">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= partial 'navigation.html.erb' %>
+    </div>
+
+    <div class="col-sm-9">
+      <h2 class="page-header" id="interlocutor">Interlocutor</h2>
+
+      <p class="lead">An Interlocutor represents a user on a messenging platform.</p>
+
+      <h4 class="page-header">Request</h4>
+
+      <pre>
+curl -XPOST -H "Content-type: application/json" -d '{
+  "interlocutor": {
+    "distinct_id": "sfs78d6fsfg7-8sdfgsdfg7d7-8gbv8b8ub",
+    "first_name" "John",
+    "last_name" "Doe",
+    "gender": "male",
+    "locale": "US",
+    "timezone": "EasternTime",
+    "profile_picture": "http://example.com/profile.jpg"
+  }
+}' 'https://api.dialoganalytics.com/v1/interlocutors?token=XJ2ws4jZsUwHmPBfsQMj82EP'</pre>
+
+        <h4 class="page-header">Parameters</h4>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table m-b-0">
+              <thead>
+                <tr>
+                  <th>Param</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <i>distinct_id</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-primary">Required</span>
+                    <p>User ID from the issuing platform.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i>first_name</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-default">Optional</span>
+                    <p>User first name</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i>last_name</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-default">Optional</span>
+                    <p>User last name</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i>gender</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-default">Optional</span>
+                    <p>User gender</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i>timezone</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-default">Optional</span>
+                    <p>User timezone</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i>locale</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-default">Optional</span>
+                    <p>User locale</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i>profile_pic</i>
+                  </td>
+                  <td>
+                    <strong>string</strong> <span class="label label-default">Optional</span>
+                    <p>User profile picture</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container" id="main">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= partial 'navigation.html.erb' %>
+    </div>
+
+    <div class="col-sm-9">
+      <h2 class="page-header" id="conversation">Conversation</h2>
+
+      <p class="lead">A Conversation represents the concept of a thread or channel on a messenging platform.</p>
+
+      <h4 class="page-header">Request</h4>
+
+      <pre>
+curl -XPOST -H "Content-type: application/json" -d '{
+  "conversation": {
+    "distinct_id": "sfs78d6fsfg7-8sdfgsdfg7d7-8gbv8b8ub"
+  }
+}' 'https://api.dialoganalytics.com/v1/conversations?token=XJ2ws4jZsUwHmPBfsQMj82EP'</pre>
+
+      <h4 class="page-header">Parameters</h4>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <i>distinct_id</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>User ID from the issuing platform.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -21,7 +21,13 @@ keywords:
 curl -XPOST -H "Content-type: application/json" -d '{
   "conversation": {
     "platform": "messenger",
-    "distinct_id": "sfs78d6fsfg7-8sdfgsdfg7d7-8gbv8b8ub"
+    "distinct_id": "sfs78d6fsfg7-8sdfgsdfg7d7-8gbv8b8ub",
+    "properties": {
+      "group": {
+        "name": "Dialog",
+        "distinct_id": "8721hnj234"
+      }
+    }
   }
 }' 'https://api.dialoganalytics.com/v1/conversations?token=XJ2ws4jZsUwHmPBfsQMj82EP'</pre>
 
@@ -53,6 +59,25 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
                   <p>A unique conversation, thread or channel ID issued by the messenging platform.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>properties</i>
+                </td>
+                <td>
+                  <strong>hash</strong> <span class="label label-default">Optional</span>
+                  <p>Additional conversation properties.</p>
+                  <p>You may include a <code>group</code> property with <code>name</code> and <code>distinct_id</code> properties to track Slack teams.</p>
+                  <pre>
+...,
+properties: {
+  group: {
+    name: "Dialog",
+    distinct_id: "8721hnj234"
+  }
+}
+</pre>
                 </td>
               </tr>
             </tbody>

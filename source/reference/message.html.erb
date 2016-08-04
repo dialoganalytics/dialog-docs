@@ -22,14 +22,13 @@ curl -XPOST -H "Content-type: application/json" -d '{
   "message": {
     "platform": "telegram",
     "creator": "creator-id",
-    "conversation_id" "2e308c61-eaa3-493b-8037-1529960f81a5",
     "type": "text",
     "sent_at": "1462447199",
     "properties": {
       "text": "Hello world"
     }
   }
-}' 'https://api.dialoganalytics.com/v1/messages?token=XJ2ws4jZsUwHmPBfsQMj82EP'</pre>
+}' 'https://api.dialoganalytics.com/v1/conversations/2e308c61-eaa3-493b-8037-1529960f81a5/messages?token=XJ2ws4jZsUwHmPBfsQMj82EP'</pre>
 
       <h4 class="page-header">Parameters</h4>
 
@@ -59,15 +58,6 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
                   <p>ID of sender, either a unique user ID or the bot's token.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>conversation_id</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>A unique conversation, thread or channel ID in which the message has been delivered.</p>
                 </td>
               </tr>
               <tr>

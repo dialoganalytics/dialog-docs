@@ -21,7 +21,7 @@ keywords:
 curl -XPOST -H "Content-type: application/json" -d '{
   "message": {
     "platform": "telegram",
-    "creator": "creator-id",
+    "creator_id": "creator-id",
     "type": "text",
     "sent_at": "1462447199",
     "properties": {
@@ -53,11 +53,12 @@ curl -XPOST -H "Content-type: application/json" -d '{
               </tr>
               <tr>
                 <td>
-                  <i>creator</i>
+                  <i>creator_id</i>
                 </td>
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
                   <p>ID of sender, either a unique user ID or the bot's token.</p>
+                  <p>If the creator_id is from a user and is seen for the first time, then a new Interlocutor will be created.</p>
                 </td>
               </tr>
               <tr>

@@ -2,16 +2,12 @@
   "name": "dialog-docs",
   "version": "1.0.0",
   "description": "",
-  "main": "Gulpfile.js",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "p@dialoganalytics.com",
   "license": "ISC"
 }

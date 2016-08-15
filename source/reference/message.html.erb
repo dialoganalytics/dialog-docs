@@ -20,6 +20,7 @@ keywords:
       <pre>
 curl -XPOST -H "Content-type: application/json" -d '{
   "message": {
+    "distinct_id": "some-message-distinct-id",
     "platform": "telegram",
     "creator_id": "creator-id",
     "type": "text",
@@ -42,6 +43,15 @@ curl -XPOST -H "Content-type: application/json" -d '{
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>
+                  <i>distinct_id</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>A unique message ID issued by the messenging platform.</p>
+                </td>
+              </tr>
               <tr>
                 <td>
                   <i>platform</i>

@@ -37,6 +37,7 @@
   width: 1%;
   background-color: #f5f7f9;
   border-left: 1px solid $gray-lighter;
+  white-space: nowrap;
 }
 
 .callout-default { border-left-color: $gray-light; }

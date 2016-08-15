@@ -20,7 +20,6 @@ keywords:
       <pre>
 curl -XPOST -H "Content-type: application/json" -d '{
   "conversation": {
-    "platform": "messenger",
     "distinct_id": "some-conversation-distinct-id",
     "properties": {
       "group": {
@@ -43,15 +42,6 @@ curl -XPOST -H "Content-type: application/json" -d '{
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <i>platform</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>The platform on which the conversation is happening. Possible values: <code>telegram</code>, <code>messenger</code>, <code>kik</code>, <code>slack</code>, <code>line</code>, <code>skype</code>, <code>wechat</code>, <code>whatsapp</code>.</p>
-                </td>
-              </tr>
               <tr>
                 <td>
                   <i>distinct_id</i>

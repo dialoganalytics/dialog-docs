@@ -50,6 +50,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
                   <p>A unique message ID issued by the messenging platform.</p>
+                  <p>Messsages with an existing <code>distinct_id</code> will be discarded but the API response will be a <code>201</code>.</p>
                 </td>
               </tr>
               <tr>

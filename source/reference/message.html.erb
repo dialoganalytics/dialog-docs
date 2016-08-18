@@ -23,8 +23,8 @@ curl -XPOST -H "Content-type: application/json" -d '{
     "distinct_id": "<span class="js-distinct-id"></span>",
     "platform": "telegram",
     "creator_id": "creator-id",
-    "type": "text",
-    "sent_at": "1462447199",
+    "mtype": "text",
+    "sent_at": "1471553253267",
     "properties": {
       "text": "Hello world"
     }
@@ -74,7 +74,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
               </tr>
               <tr>
                 <td>
-                  <i>type</i>
+                  <i>mtype</i>
                 </td>
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
@@ -88,16 +88,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 </td>
                 <td>
                   <strong>integer</strong> <span class="label label-primary">Required</span>
-                  <p>Timestamp in UTC epoch seconds.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>distinct_id</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>Message ID assigned by the issuing platform.</p>
+                  <p>A Number representing the milliseconds elapsed since 1 January 1970 00:00:00 UTC.</p>
                 </td>
               </tr>
               <tr>

@@ -20,7 +20,7 @@ keywords:
       <pre>
 curl -XPOST -H "Content-type: application/json" -d '{
   "message": {
-    "distinct_id": "some-message-distinct-id",
+    "distinct_id": "<span class="js-distinct-id"></span>",
     "platform": "telegram",
     "creator_id": "creator-id",
     "type": "text",
@@ -29,7 +29,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
       "text": "Hello world"
     }
   }
-}' 'https://api.dialoganalytics.com/v1/conversations/some-conversation-distinct-id/messages?token=dialog-public-token'</pre>
+}' 'https://api.dialoganalytics.com/v1/conversations/conversation-distinct-id/messages?token=dialog-public-token'</pre>
 
       <h4 class="page-header">Parameters</h4>
 

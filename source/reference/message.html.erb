@@ -24,9 +24,10 @@ curl -XPOST -H "Content-type: application/json" -d '{
     "platform": "telegram",
     "creator_id": "creator-id",
     "mtype": "text",
-    "sent_at": "1471553253267",
+    "sent_at": 1471553253267,
     "properties": {
-      "text": "Hello world"
+      "text": "Hello world",
+      "confidence": 0.3459
     }
   }
 }' 'https://api.dialoganalytics.com/v1/conversations/conversation-distinct-id/messages?token=dialog-public-token'</pre>
@@ -98,6 +99,31 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 <td>
                   <strong>hash</strong> <span class="label label-default">Optional</span>
                   <p>Additional message properties. Mostly used to add interesting metadata dependent on <a href="#message-types">message types</a>.</p>
+
+                  <hr>
+
+                  <p>The following properties can always be combined to <a href="#message-types">message types</a> specific ones.</p>
+
+                  <table class="table m-b-0">
+                    <thead>
+                      <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i>confidence</i>
+                        </td>
+                        <td>
+                          <strong>float</strong> <span class="label label-default">Optional</span>
+                          <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Luis.ai, etc.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 </td>
               </tr>
             </tbody>

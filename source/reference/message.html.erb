@@ -24,7 +24,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
     "platform": "telegram",
     "creator_id": "creator-id",
     "mtype": "text",
-    "sent_at": 1471553253267,
+    "sent_at": 1472068363.049758,
     "properties": {
       "text": "Hello world",
       "confidence": 0.3459
@@ -88,8 +88,8 @@ curl -XPOST -H "Content-type: application/json" -d '{
                   <i>sent_at</i>
                 </td>
                 <td>
-                  <strong>integer</strong> <span class="label label-primary">Required</span>
-                  <p>A Number representing the milliseconds elapsed since 1 January 1970 00:00:00 UTC.</p>
+                  <strong>number</strong> <span class="label label-primary">Required</span>
+                  <p>A floating point number representing the seconds and milliseconds elapsed since 1 January 1970 00:00:00 UTC.</p>
                 </td>
               </tr>
               <tr>

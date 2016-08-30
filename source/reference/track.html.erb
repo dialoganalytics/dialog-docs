@@ -1,0 +1,145 @@
+---
+title: Track - Dialog Documentation
+description:
+keywords:
+---
+
+<div class="container p-b-lg" id="main">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= partial 'navigation' %>
+    </div>
+
+    <div class="col-sm-9">
+      <h2 class="page-header" id="track">Track</h2>
+
+      <p class="lead">This action allows to track both <strong>sent</strong> and <strong>received</strong> messages without worrying about conversation and interlocutor management.</p>
+
+      <h4 class="page-header">Request</h4>
+
+      <pre>
+curl -XPOST -H "Content-type: application/json" -d '{
+  "message": {
+    "conversation_distinct_id": "<span class="js-distinct-id"></span>",
+    "creator_distinct_id": "<span class="js-distinct-id"></span>",
+    "distinct_id": "<span class="js-distinct-id"></span>",
+    "platform": "telegram",
+    "mtype": "text",
+    "sent_at": 1472068363.049758,
+    "properties": {
+      "text": "Hello world",
+      "confidence": 0.3459
+    }
+  }
+}' 'https://api.dialoganalytics.com/v1/track?token=dialog-public-token'</pre>
+
+      <h4 class="page-header">Parameters</h4>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <table class="table m-b-0">
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <i>conversation_distinct_id</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>A unique conversation ID issued by the messenging platform.</p>
+                  <p>If the <code>conversation_distinct_id</code> is seen for the first time, then a new <%= link_to 'Conversation', '/reference/conversation.html' %> will be created.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>creator_distinct_id</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>ID of sender, either a unique user ID or the bot's token.</p>
+                  <p>If the <code>creator_distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'Interlocutor', '/reference/interlocutor.html' %> will be created.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>distinct_id</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>A unique message ID issued by the messenging platform.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>platform</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>The platform on which the message is sent. Possible values: <code>slack</code>, <code>telegram</code>, <code>messenger</code>, <code>skype</code>, <code>line</code>, <code>wechat</code>, <code>kik</code>, <code>sms</code>, <code>web</code>.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>mtype</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>Message type. Refer to <a href="/reference/message#types">message types</a> for supported values.</p>
+                  <p>Note that additional <code>properties</code> are expected depending of the message type.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>sent_at</i>
+                </td>
+                <td>
+                  <strong>number</strong> <span class="label label-primary">Required</span>
+                  <p>A floating point number representing the seconds and milliseconds elapsed since 1 January 1970 00:00:00 UTC.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>properties</i>
+                </td>
+                <td>
+                  <strong>hash</strong> <span class="label label-default">Optional</span>
+                  <p>Additional message properties. Mostly used to add interesting metadata dependent on <a href="#message-types">message types</a>.</p>
+
+                  <hr>
+
+                  <p>The following properties can always be combined to <a href="/reference/message#types">message types</a> specific ones.</p>
+
+                  <table class="table m-b-0">
+                    <thead>
+                      <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i>confidence</i>
+                        </td>
+                        <td>
+                          <strong>float</strong> <span class="label label-default">Optional</span>
+                          <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Luis.ai, etc.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

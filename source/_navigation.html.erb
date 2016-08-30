@@ -1,16 +1,44 @@
-<ul class="nav nav-bordered nav-stacked">
-  <li class="nav-header m-t">Overview</li>
-  <li><a href="/#introduction">Introduction</a></li>
-  <li><a href="/#examples">Examples</a></li>
-  <li><a href="/#authentication">Authentication</a></li>
-  <li><a href="/#errors">Errors</a></li>
-  <li><a href="/#rate-limiting">Rate limiting</a></li>
-  <li><a href="/#versioning">Versioning</a></li>
+<nav>
+  <ul class="nav nav-stacked">
+    <li class="nav-header m-t">Overview</li>
+    <li><a href="/#introduction">Introduction</a></li>
+    <li><a href="/#examples">Examples</a></li>
+    <li><a href="/#authentication">Authentication</a></li>
+    <li><a href="/#errors">Errors</a></li>
+    <li><a href="/#rate-limiting">Rate limiting</a></li>
+    <li><a href="/#versioning">Versioning</a></li>
 
-  <li class="nav-divider"></li>
+    <li class="divider"></li>
 
-  <li class="nav-header m-t">API Reference</li>
-  <li><a href="/reference/conversation">Conversation</a></li>
-  <li><a href="/reference/interlocutor">Interlocutor</a></li>
-  <li><a href="/reference/message">Message</a></li>
-</ul>
+    <li class="nav-header m-t">API Reference</li>
+    <li>
+      <a href="/reference/track">Track</a>
+    </li>
+    <li>
+      <a href="/reference/conversation">Conversation</a>
+      <ul>
+        <li><a href="/reference/conversation#object">Conversation object</a></li>
+        <li><a href="/reference/conversation#show">Retrieve a conversation</a></li>
+        <li><a href="/reference/conversation#index">List all conversations</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="/reference/message">Message</a>
+      <ul>
+        <li><a href="/reference/message#object">Message object</a></li>
+        <li><a href="/reference/message#show">Retrieve a message</a></li>
+        <li><a href="/reference/message#index">List all messages</a></li>
+        <li><a href="/reference/message#types">Types</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="/reference/interlocutor">Interlocutor</a>
+      <ul>
+        <li><a href="/reference/interlocutor#object">Interlocutor object</a></li>
+        <li><a href="/reference/interlocutor#create">Create an interlocutor</a></li>
+        <li><a href="/reference/interlocutor#show">Retrieve a interlocutor</a></li>
+        <li><a href="/reference/interlocutor#index">List all interlocutors</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

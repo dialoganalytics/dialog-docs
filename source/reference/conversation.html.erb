@@ -15,7 +15,27 @@ keywords:
 
       <p class="lead">A Conversation represents the concept of a thread or channel on a messenging platform.</p>
 
-      <h4 class="page-header">Request</h4>
+      <h4 class="page-header" id="object">Conversation object</h4>
+
+      <pre>
+{
+  "id": "58f52d4a-8271-4452-9f9a-ee2e732cafdb",
+  "created_at": 1472585700.314108,
+  "updated_at": 1472585700.314108,
+  "start_at": 1472585712.1784809,
+  "end_at": 1472587659.338124,
+  "duration": 1947.1596431732178,
+  "distinct_id": "692e73ea-f1d2-44b6-a8f8-b21e1820c1e0",
+  "messages_count": 17,
+  "properties": {
+    "group": {
+      "name": "Dialog",
+      "distinct_id": "8721hnj234"
+    }
+  }
+}</pre>
+
+      <h4 class="page-header" id="create">Create a conversation</h4>
 
       <pre>
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -75,6 +95,15 @@ properties: {
         </div>
       </div>
 
+      <h4 class="page-header" id="show">Retrieve a conversation</h4>
+      <p>Retrieves the details of an existing conversation. You need only supply the unique conversation identifier that was returned upon conversation creation.</p>
+
+      <pre>curl https://api.dialoganalytics.com/v1/conversations/:id?token=dialog-public-token</pre>
+
+      <h4 class="page-header" id="index">List all conversations</h4>
+      <p>Returns a list of the bot's conversations. The conversations are returned sorted by creation date, with the most recent conversations appearing first.</p>
+
+      <pre>curl https://api.dialoganalytics.com/v1/conversations?token=dialog-public-token</pre>
     </div>
   </div>
 </div>

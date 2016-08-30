@@ -15,102 +15,127 @@ keywords:
 
       <p class="lead">An Interlocutor represents a user on a messenging platform.</p>
 
-      <h4 class="page-header">Request</h4>
+      <h4 class="page-header" id="object">Interlocutor object</h4>
 
       <pre>
-curl -XPOST -H "Content-type: application/json" -d '{
-  "interlocutor": {
-    "distinct_id": "<span class="js-distinct-id"></span>",
-    "first_name": "John",
-    "last_name": "Doe",
-    "gender": "male",
-    "locale": "US",
-    "timezone": "Eastern Time (US & Canada)",
-    "profile_picture": "http://example.com/profile.jpg"
-  }
-}' 'https://api.dialoganalytics.com/v1/interlocutors?token=dialog-public-token'</pre>
+{
+  "id": "6ec0d852-e2a2-45ee-93da-e719b8345250",
+  "created_at": 1472585700.314108,
+  "updated_at": 1472585700.314108,
+  "distinct_id": "8610c2c3-72c9-4c96-8c5a-3953aebe0c8d",
+  "first_name": "Elon",
+  "last_name": "Musk",
+  "gender": "male",
+  "locale": "US",
+  "profile_picture": "http://spacex.com/elon.jpg",
+  "timezone": "Pacific Time (US & Canada)"
+}</pre>
 
-        <h4 class="page-header">Parameters</h4>
+      <h4 class="page-header" id="create">Create an interlocutor</h4>
 
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <table class="table m-b-0">
-              <thead>
-                <tr>
-                  <th>Param</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <i>distinct_id</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-primary">Required</span>
-                    <p>User ID from the issuing platform.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i>first_name</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-default">Optional</span>
-                    <p>User first name</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i>last_name</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-default">Optional</span>
-                    <p>User last name</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i>gender</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-default">Optional</span>
-                    <p>User gender</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i>timezone</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-default">Optional</span>
-                    <p>User timezone</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i>locale</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-default">Optional</span>
-                    <p>User locale</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i>profile_picture</i>
-                  </td>
-                  <td>
-                    <strong>string</strong> <span class="label label-default">Optional</span>
-                    <p>User profile picture</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+<pre>
+  curl -XPOST -H "Content-type: application/json" -d '{
+    "interlocutor": {
+      "distinct_id": "<span class="js-distinct-id"></span>",
+      "first_name": "John",
+      "last_name": "Doe",
+      "gender": "male",
+      "locale": "US",
+      "profile_picture": "http://example.com/profile.jpg"
+      "timezone": "Eastern Time (US & Canada)",
+    }
+  }' 'https://api.dialoganalytics.com/v1/interlocutors?token=dialog-public-token'</pre>
+
+      <h4 class="page-header">Parameters</h4>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <table class="table m-b-0">
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <i>distinct_id</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>User ID from the issuing platform.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>first_name</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User first name</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>last_name</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User last name</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>gender</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User gender</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>timezone</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User timezone</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>locale</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User locale</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>profile_picture</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User profile picture</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
       </div>
+
+      <h4 class="page-header" id="show">Retrieve an interlocutor</h4>
+      <p>Retrieves the details of an existing interlocutor. You need only supply the unique interlocutor identifier that was returned upon interlocutor creation.</p>
+
+      <pre>curl https://api.dialoganalytics.com/v1/interlocutors/:id?token=dialog-public-token</pre>
+
+      <h4 class="page-header" id="index">List all interlocutors</h4>
+      <p>Returns a list of the bot's interlocutors. The interlocutors are returned sorted by creation date, with the most recent interlocutors appearing first.</p>
+
+      <pre>curl https://api.dialoganalytics.com/v1/interlocutors?token=dialog-public-token</pre>
+
     </div>
   </div>
 </div>

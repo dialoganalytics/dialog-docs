@@ -109,6 +109,13 @@ keywords:
       <h3 class="page-header" id="rate-limiting">Rate Limiting</h3>
       <p>You can make the number of requests your plan allows you to do. Check the returned HTTP headers of any API request to see your current rate limit status. If you’re running into this error or think you’ll need a higher rate limit, drop us a line at <a href="mailto:friends@dialoganalytics.com">friends@dialoganalytics.com</a>.</p>
 
+      <div class="callout callout-primary">
+        <div class="callout-content">
+          <p>We always keep ingesting your data, even if you go over limit. And you won’t get billed more instantly. We’ll contact you about overages and will upgrade you according to our upgrade policy.</p>
+        </div>
+      </div>
+
+
       <table class="table">
         <thead>
           <tr>
@@ -131,8 +138,6 @@ keywords:
           </tr>
         </tbody>
       </table>
-
-      <p>Once you go over the rate limit you will receive a <code>429</code> <strong>Too Many Requests</strong> error response.</p>
 
       <h3 class="page-header" id="versioning">Versioning</h3>
       <p>When we make backwards-incompatible changes to our API, we release new dated versions. The latest version is <code>v1</code>.</p>

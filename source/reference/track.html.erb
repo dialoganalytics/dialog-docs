@@ -23,7 +23,8 @@ curl -XPOST -H "Content-type: application/json" -d '{
     "conversation_distinct_id": "<span class="js-distinct-id"></span>",
     "creator_distinct_id": "<span class="js-distinct-id"></span>",
     "distinct_id": "<span class="js-distinct-id"></span>",
-    "platform": "telegram",
+    "platform": "messenger",
+    "provider": "messenger",
     "mtype": "text",
     "sent_at": 1472068363.049758,
     "properties": {
@@ -80,7 +81,16 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 </td>
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>The platform on which the message is sent. Possible values: <code>slack</code>, <code>telegram</code>, <code>messenger</code>, <code>skype</code>, <code>line</code>, <code>wechat</code>, <code>kik</code>, <code>sms</code>, <code>web</code>.</p>
+                  <p>The platform on which the message is sent. Possible values: <code>slack</code>, <code>messenger</code>, <code>kik</code>, <code>sms</code>, <code>web</code>, <code>api</code>.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>provider</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>The provider on which which the message is sent. Possible values: <code>messenger</code>, <code>kik</code>, <code>smooch</code>.</p>
                 </td>
               </tr>
               <tr>

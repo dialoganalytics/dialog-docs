@@ -67,8 +67,11 @@ keywords:
       </div>
 
       <h3 class="page-header" id="authentication">Authentication</h3>
+
       <p>Authenticate your account when using the API by including your secret API key in the request. You can manage your API keys in the Dashboard. Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
-      <p>Authentication to the API is performed via the request's URL <strong>token</strong> parameter.</p>
+
+      <p>Authentication to the API can be performed via the request's URL <strong>token</strong> parameter or by including an <code>HTTP_AUTHORIZATION</code> header with your API key.</p>
+
       <p>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.</p>
 
       <h3 class="page-header" id="errors">Errors</h3>

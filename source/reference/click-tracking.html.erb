@@ -15,7 +15,9 @@ keywords:
 
       <p class="lead">This action allows to track links clicked by users inside a conversation.</p>
 
-      <p>To use click tracking, wrap all your URLs like this: <code>https://api.dialoganalytics.com/v1/click/:conversation_distinct_id?url=http://example.com</code>, where <code>:conversation_distinct_id</code> is a unique conversation ID issued by the provider eg. Facebook, Kik or Smooch.</p>
+      <p>To use click tracking, wrap all your URLs like this: <code>https://api.dialoganalytics.com/v1/click/:id?url=http://example.com</code>, where <code>:id</code> is a unique conversation ID issued by the provider eg. Facebook, Kik or Smooch.</p>
+
+      <p>The <code>url</code> should be encoded.</p>
 
       <p>Dialog will track every click and redirect the user to the URL specified as the <code>url</code> parameter.</p>
 

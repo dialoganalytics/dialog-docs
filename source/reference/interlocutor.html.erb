@@ -44,7 +44,7 @@ keywords:
       "profile_picture": "http://example.com/profile.jpg"
       "timezone": "Eastern Time (US & Canada)",
     }
-  }' 'https://api.dialoganalytics.com/v1/interlocutors?token=dialog-public-token'</pre>
+  }' 'https://api.dialoganalytics.com/v1/b/:id/interlocutors?token=dialog-public-token'</pre>
 
       <h4 class="page-header">Parameters</h4>
 
@@ -127,14 +127,14 @@ keywords:
       </div>
 
       <h4 class="page-header" id="show">Retrieve an interlocutor</h4>
-      <p>Retrieves the details of an existing interlocutor. You need only supply the unique interlocutor identifier that was returned upon interlocutor creation.</p>
+      <p>Retrieves the details of an existing interlocutor. You need only supply the unique bot and interlocutor identifier that was returned upon interlocutor creation.</p>
 
-      <pre>curl https://api.dialoganalytics.com/v1/interlocutors/:id?token=dialog-public-token</pre>
+      <pre>curl https://api.dialoganalytics.com/v1/b/:id/interlocutors/:id?token=dialog-public-token</pre>
 
       <h4 class="page-header" id="index">List all interlocutors</h4>
       <p>Returns a list of the bot's interlocutors. The interlocutors are returned sorted by creation date, with the most recent interlocutors appearing first.</p>
 
-      <pre>curl https://api.dialoganalytics.com/v1/interlocutors?token=dialog-public-token</pre>
+      <pre>curl https://api.dialoganalytics.com/v1/b/:id/interlocutors?token=dialog-public-token</pre>
 
     </div>
   </div>

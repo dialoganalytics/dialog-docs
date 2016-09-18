@@ -63,7 +63,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 </td>
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>ID of sender, either a unique user ID or the bot's token.</p>
+                  <p>ID of sender, either a unique user ID or the bot's ID.</p>
                   <p>If the <code>creator_distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'Interlocutor', '/reference/interlocutor.html' %> will be created.</p>
                 </td>
               </tr>
@@ -82,7 +82,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 </td>
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>A unique message ID issued by the messenging platform.</p>
+                  <p>A unique message ID issued by the messenging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
                 </td>
               </tr>
               <tr>
@@ -119,7 +119,8 @@ curl -XPOST -H "Content-type: application/json" -d '{
                 </td>
                 <td>
                   <strong>number</strong> <span class="label label-primary">Required</span>
-                  <p>A floating point number representing the seconds and milliseconds elapsed since 1 January 1970 00:00:00 UTC.</p>
+                  <p>A floating point number representing the seconds and milliseconds elapsed since 1 January 1970 00:00:00 UTC. Also refered to as a <a href="https://en.wikipedia.org/wiki/Unix_time">unix timestamp</a>.</p>
+                  <p>Example: <code>1474215799.4329312</code>, <code>1474215799.432</code> or <code>1474215799</code> are valid values.</p>
                 </td>
               </tr>
               <tr>

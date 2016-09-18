@@ -22,6 +22,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
   "message": {
     "conversation_distinct_id": "<span class="js-distinct-id"></span>",
     "creator_distinct_id": "<span class="js-distinct-id"></span>",
+    "creator_type": "interlocutor",
     "distinct_id": "<span class="js-distinct-id"></span>",
     "platform": "messenger",
     "provider": "messenger",
@@ -64,6 +65,15 @@ curl -XPOST -H "Content-type: application/json" -d '{
                   <strong>string</strong> <span class="label label-primary">Required</span>
                   <p>ID of sender, either a unique user ID or the bot's token.</p>
                   <p>If the <code>creator_distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'Interlocutor', '/reference/interlocutor.html' %> will be created.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>creator_type</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-primary">Required</span>
+                  <p>Either <code>interlocutor</code> or <code>bot</code>. Case insensitive.</p>
                 </td>
               </tr>
               <tr>

@@ -15,11 +15,13 @@ keywords:
 
       <p class="lead">This action allows to track links clicked by users inside a conversation.</p>
 
-      <p>To use click tracking, wrap all your URLs like this: <code>https://api.dialoganalytics.com/v1/click/:id?url=http://example.com</code>, where <code>:id</code> is a unique conversation ID issued by the provider eg. Facebook, Kik or Smooch.</p>
+      <p>To use click tracking, wrap all your URLs like this: <code>https://api.dialoganalytics.com/v1/click/:id?url=http%3A%2F%2Fexample.com</code>, where <code>:id</code> is a unique conversation ID issued by the provider or the platform.</p>
 
-      <p>The <code>url</code> should be encoded.</p>
+      <p>The <code>url</code> should be encoded according to the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent</a> specification.</p>
 
       <p>Dialog will track every click and redirect the user to the URL specified as the <code>url</code> parameter.</p>
+
+      <p>If the conversation doesn't exist on Dialog's end, either because the data has been reset or because the conversation hasn't been created yet, the click event will be discarded. The redirection happens at <strong>all times</strong>.</p>
 
       <div class="callout callout-primary">
         <div class="callout-content">

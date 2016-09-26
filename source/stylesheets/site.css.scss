@@ -30,6 +30,21 @@
   }
 }
 
+#sidebar {
+  .nav-header {
+    font-weight: bold;
+  }
+
+  a {
+    color: #606c76;
+  }
+
+  li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
 // Footer
 #footer {
   border-top: 1px solid $gray-lighter;

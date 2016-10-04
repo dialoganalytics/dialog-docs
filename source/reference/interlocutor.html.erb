@@ -34,7 +34,7 @@ keywords:
       <h4 class="page-header" id="create">Create an interlocutor</h4>
 
 <pre>
-  curl -XPOST -H "Content-type: application/json" -d '{
+  curl -X POST -H "Content-type: application/json" -d '{
     "interlocutor": {
       "distinct_id": "<span class="js-distinct-id"></span>",
       "first_name": "John",

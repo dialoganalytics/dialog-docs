@@ -9,4 +9,8 @@ $(function() {
   $(".js-distinct-id").each(function(i, el) {
     el.textContent = uuid();
   })
+
+  $(".js-time").each(function(i, el) {
+    el.textContent = new Date().getTime() / 1000;
+  })
 })

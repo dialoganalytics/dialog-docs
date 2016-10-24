@@ -20,9 +20,6 @@ keywords:
       <pre>
 curl -X POST -H "Content-Type: application/json" -d '{
   "message": {
-    "conversation_distinct_id": "<span class="js-distinct-id"></span>",
-    "creator_distinct_id": "<span class="js-distinct-id"></span>",
-    "creator_type": "interlocutor",
     "distinct_id": "<span class="js-distinct-id"></span>",
     "platform": "messenger",
     "provider": "messenger",
@@ -31,7 +28,14 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "properties": {
       "text": "Hello world",
       "confidence": 0.3459
-    }
+    },
+  },
+  "conversation": {
+    distinct_id": "<span class="js-distinct-id"></span>"
+  },
+  "creator": {
+    "distinct_id": "<span class="js-distinct-id"></span>",
+    "type": "interlocutor"
   }
 }' 'https://api.dialoganalytics.com/v1/b/24d6e811-31cf-496b-ab53-7c71a31d54ae/track?token=public'</pre>
 

@@ -1,0 +1,77 @@
+---
+title: Key terms and concepts - Dialog Documentation
+description:
+keywords:
+---
+
+<div class="container p-b-lg" id="main">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= partial 'navigation.html.erb' %>
+    </div>
+
+    <div class="col-sm-9">
+      <h2 class="page-header">Key terms and concepts</h2>
+      <p class="lead">These are the fundamentals in Dialog.</p>
+
+      <ul class="list-unstyled">
+        <li><a href="#message">Message</a></li>
+        <li><a href="#message-part">Message Part</a></li>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#bot">Bot</a></li>
+        <li><a href="#interlocutor">Interlocutor</a></li>
+        <li><a href="#session">Session</a></li>
+        <li><a href="#conversation">Conversation</a></li>
+        <li><a href="#flow">Flow</a></li>
+        <li><a href="#step">Step</a></li>
+        <li><a href="#objective">Objective</a></li>
+        <li><a href="#platforms">Platform</a></li>
+        <li><a href="#provider">Provider</a></li>
+      </ul>
+
+      <h4 class="page-header" id="message">Message</h4>
+      <p>A <strong>message</strong> is a piece of content sent by a <strong>bot</strong> or an <strong>interlocutor</strong>.</p>
+      <p>A message contains one or more <strong>message parts</strong>.</p>
+
+      <h5>Inbound message</h5>
+      <p>An <strong>inbound message</strong> is a message sent to a <strong>bot</strong> by an <strong>interlocutor</strong>.</p>
+
+      <h5>Outbound message</h5>
+      <p>An <strong>outbound message</strong> is a message sent to an <strong>interlocutor</strong> by a <strong>bot</strong>.</p>
+
+      <h4 class="page-header" id="message-part">Message Part</h4>
+      <p>A <strong>message part</strong> is an item belonging to a <strong>message</strong>. It has a type like <code>text</code>, <code>video</code>, <code>image</code>, etc. See all supported <a href="/reference/message#types">message types</a>.</p>
+
+      <h4 class="page-header" id="event">Event</h4>
+      <p>An <strong>event</strong> is a <strong>message</strong> with a <strong>message part</strong> of type <code>event</code>. It represents state changes in the <strong>conversation</strong>.</p>
+
+      <h4 class="page-header" id="bot">Bot</h4>
+      <p>A <strong>bot</strong> is a conversational application. It's a piece of business logic interacting with <strong>interlocutors</strong> via a conversational interface.</p>
+
+      <h4 class="page-header" id="interlocutor">Interlocutor</h4>
+      <p>An <strong>interlocutor</strong> is most likely a human user, but could also be another conversational application.</p>
+      <p><strong>Interlocutors</strong> are scoped to a bot, so the same user conversing with two <strong>bots</strong> will count as two distinct <strong>interlocutors</strong>.</p>
+
+      <h4 class="page-header" id="session">Session</h4>
+      <p>A <strong>session</strong> is a cluster of <strong>messages</strong> exchanged in a time window. It belongs to a <strong>conversation</strong>.</p>
+
+      <h4 class="page-header" id="conversation">Conversation</h4>
+      <p>A <strong>conversation</strong> represents the concept of a thread or channel on a messenging platform. It can involve many <strong>interlocutors</strong> and one <strong>bot</strong>.</p>
+
+      <h4 class="page-header" id="flow">Flow</h4>
+      <p>A <strong>flow</strong> is a broad grouping of <strong>steps</strong> leading to the completion of an <strong>objective</strong>.</p>
+
+      <h4 class="page-header" id="step">Step</h4>
+      <p>A <strong>step</strong> is a single interaction point inside a <strong>flow</strong>. A step has one or many <strong>messages</strong>.</p>
+
+      <h4 class="page-header" id="objective">Objective</h4>
+      <p>An <strong>objective</strong> is the goal of a <strong>flow</strong>. It can be for the <strong>bot</strong> to collect some informations from an <strong>interlocutor</strong>, it can be for an <strong>interlocutor</strong> to buy an item, or any other broad action.</p>
+
+      <h4 class="page-header" id="platforms">Platform</h4>
+      <p>A <strong>platform</strong> is a messenging platform, or medium, on which messages are exchanged. See all supported <a href="/reference/message#platforms">platforms</a>.</p>
+
+      <h4 class="page-header" id="provider">Provider</h4>
+      <p>A <strong>provider</strong> is the underlying service enabling the connection between a <strong>platform</strong> and Dialog. See all supported <a href="/reference/message#providers">providers</a>.</p>
+    </div>
+  </div>
+</div>

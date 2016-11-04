@@ -2,16 +2,11 @@
 
 <pre>
 curl -XPOST -H "Content-type: application/json" -d '{
-"conversation": {
-"distinct_id": "<span class="js-distinct-id"></span>",
-"properties": {
-"group": {
-  "name": "Dialog",
-  "distinct_id": "8721hnj234"
-}
-}
-}
-}' 'https://api.dialoganalytics.com/v1/b/:id/conversations?token=dialog-public-token'</pre>
+  "conversation": {
+    "distinct_id": "<span class="js-distinct-id"></span>",
+    "properties": {}
+  }
+}' 'https://api.dialoganalytics.com/v1/b/:id/conversations?token=test'</pre>
 
 <h4 class="page-header">Parameters</h4>
 
@@ -41,16 +36,6 @@ curl -XPOST -H "Content-type: application/json" -d '{
           <td>
             <strong>hash</strong> <span class="label label-default">Optional</span>
             <p>Additional conversation properties.</p>
-            <p>You may include a <code>group</code> property with <code>name</code> and <code>distinct_id</code> properties to track Slack teams.</p>
-            <pre>
-...,
-properties: {
-group: {
-name: "Dialog",
-distinct_id: "8721hnj234"
-}
-}
-</pre>
           </td>
         </tr>
       </tbody>

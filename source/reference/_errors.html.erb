@@ -19,6 +19,10 @@
       <td>The request has been fulfilled and has resulted in one or more new resources being created.</td>
     </tr>
     <tr>
+      <td>400 - Bad Request</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>401 - Unauthorized</td>
       <td>The request has not been applied because it lacks valid authentication credentials for the target resource.</td>
     </tr>
@@ -27,11 +31,27 @@
       <td>The server understood the request but refuses to authorize it.</td>
     </tr>
     <tr>
-      <td>422 - Unprocessable entity</td>
-      <td>The request was unacceptable, often due to missing a required parameter.</td>
+      <td>404 - Record Not Found</td>
+      <td></td>
     </tr>
     <tr>
-      <td>500 - Internal server error</td>
+      <td>404 - Routing Error</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>422 - Record Invalid</td>
+      <td>The request was unacceptable, all required parameters are present, but some parameters are invalid.</td>
+    </tr>
+    <tr>
+      <td>422 - Record Not Unique</td>
+      <td>The request was unacceptable due to a non-unique attribute.</td>
+    </tr>
+    <tr>
+      <td>422 - Parameter Missing</td>
+      <td>The request was unacceptable due to missing a required parameter.</td>
+    </tr>
+    <tr>
+      <td>500 - Internal Server Error</td>
       <td>Something went wrong on Dialog's end. (These are rare.)</td>
     </tr>
   </tbody>

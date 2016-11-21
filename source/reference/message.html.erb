@@ -31,8 +31,7 @@ keywords:
   "platform": "messenger",
   "provider": "smooch",
   "properties": {
-    "text": "Hey ho, let's go",
-    "confidence": 0.88
+    "text": "Hey ho, let's go"
   }
 }</pre>
 
@@ -46,73 +45,92 @@ keywords:
 
       <pre>curl https://api.dialoganalytics.com/v1/b/:id/conversations/:id/messages</pre>
 
-      <h2 class="page-header" id="types">Message types</h2>
+      <h4 class="page-header" id="types">Message types</h4>
 
-      <div class="row">
-        <div class="col-sm-6">
-          <h5>Currently supported</h5>
-          <ul>
-            <li><a href="#audio">audio</a></li>
-            <li><a href="#command">command</a></li>
-            <li><a href="#contact">contact</a></li>
-            <li><a href="#document">document</a></li>
-            <li><a href="#image">image</a></li>
-            <li><a href="#link">link</a></li>
-            <li><a href="#location">location</a></li>
-            <li><a href="#postback">postback</a></li>
-            <li><a href="#text">text</a></li>
-            <li><a href="#sticker">sticker</a></li>
-            <li><a href="#template-generic">generic template</a></li>
-            <li><a href="#template-receipt">receipt template</a></li>
-            <li><a href="#template-button">button template</a></li>
-            <li><a href="#venue">venue</a></li>
-            <li><a href="#video">video</a></li>
-            <li><a href="#voice">voice</a></li>
-          </ul>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <code>image</code> <code>audio</code> <code>video</code> <code>file</code> <code>link</code>
         </div>
 
-        <div class="col-sm-6">
-          <h5>Coming soon</h5>
-          <ul>
-            <li>account linking</li>
-            <li>airline boardingpass</li>
-            <li>airline checkin</li>
-            <li>airline itinerary</li>
-            <li>airline update</li>
-            <li>delivery-receipt</li>
-            <li>friend-picker</li>
-            <li>is-typing</li>
-            <li>optin</li>
-            <li>quick reply</li>
-            <li>read-receipt</li>
-            <li>rich message</li>
-            <li>scan-data</li>
-            <li>start-chatting</li>
-            <li>web url</li>
-          </ul>
-        </div>
+        <table class="table m-b-0">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <i>url</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="label label-primary">Required</span>
+                <p>URL</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
+      <pre>
+{
+  "message": {
+    "type": "audio",
+    "properties": {
+      "url": "http://example.com/asset.mp3"
+    }
+  }
+}</pre>
 
-      <%= partial 'message-types/table' %>
 
-      <%= partial 'message-types/audio' %>
-      <%= partial 'message-types/command' %>
-      <%= partial 'message-types/contact' %>
-      <%= partial 'message-types/document' %>
-      <%= partial 'message-types/image' %>
-      <%= partial 'message-types/link' %>
-      <%= partial 'message-types/location' %>
-      <%= partial 'message-types/postback' %>
-      <%# partial 'message-types/scan_data' %>
-      <%= partial 'message-types/sticker' %>
-      <%= partial 'message-types/template_button' %>
-      <%= partial 'message-types/template_generic' %>
-      <%= partial 'message-types/template_receipt' %>
-      <%= partial 'message-types/text' %>
-      <%= partial 'message-types/venue' %>
-      <%= partial 'message-types/video' %>
-      <%= partial 'message-types/voice' %>
+<hr>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <code>location</code>
+        </div>
+
+        <table class="table m-b-0">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <i>lat</i>
+              </td>
+              <td>
+                <strong>float</strong> <span class="label label-primary">Required</span>
+                <p>Latitude</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>lng</i>
+              </td>
+              <td>
+                <strong>float</strong> <span class="label label-primary">Required</span>
+                <p>Longitude</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre>
+{
+  "message": {
+    "type": "location",
+    "properties": {
+      "lat": 46.8565177,
+      "lng": -71.4861574
+    }
+  }
+}</pre>
     </div>
   </div>
 </div>

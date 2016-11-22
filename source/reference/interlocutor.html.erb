@@ -19,16 +19,20 @@ keywords:
 
       <pre>
 {
-  "created_at": 1472585700.314108,
-  "updated_at": 1472585700.314108,
   "id": "<span class="js-distinct-id"></span>",
   "distinct_id": "<span class="js-distinct-id"></span>",
+  "bot_id": "<span class="js-distinct-id"></span>",
+  "conversation_id": "<span class="js-distinct-id"></span>",
+  "username": "elon",
+  "phone": "141812312345",
+  "email": "elon@spacex.com",
   "first_name": "Elon",
   "last_name": "Musk",
   "gender": "male",
   "locale": "US",
   "profile_picture": "http://spacex.com/elon.jpg",
   "timezone": "Pacific Time (US & Canada)"
+  "created_at": 1472585700.314108
 }</pre>
 
       <h4 class="page-header" id="create">Create an interlocutor</h4>
@@ -37,12 +41,15 @@ keywords:
 curl -X POST -H "Content-type: application/json" -d '{
   "interlocutor": {
     "distinct_id": "<span class="js-distinct-id"></span>",
-    "first_name": "John",
-    "last_name": "Doe",
+    "username": "elon",
+    "phone": "141812312345",
+    "email": "elon@spacex.com",
+    "first_name": "Elon",
+    "last_name": "Musk",
     "gender": "male",
     "locale": "US",
-    "profile_picture": "http://example.com/profile.jpg"
-    "timezone": "Eastern Time (US & Canada)",
+    "profile_picture": "http://spacex.com/elon.jpg",
+    "timezone": "Pacific Time (US & Canada)"
   }
 }' 'https://api.dialoganalytics.com/v1/b/a925a32e/interlocutors?token=test'</pre>
 
@@ -65,6 +72,33 @@ curl -X POST -H "Content-type: application/json" -d '{
                 <td>
                   <strong>string</strong> <span class="label label-primary">Required</span>
                   <p>A unique user ID issued by the messenging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>username</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>Username</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>phone</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User phone number. Minimum length 10 characters. Maximum length 25 characters.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>email</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User email</p>
                 </td>
               </tr>
               <tr>
@@ -96,15 +130,6 @@ curl -X POST -H "Content-type: application/json" -d '{
               </tr>
               <tr>
                 <td>
-                  <i>timezone</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User timezone</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
                   <i>locale</i>
                 </td>
                 <td>
@@ -119,6 +144,15 @@ curl -X POST -H "Content-type: application/json" -d '{
                 <td>
                   <strong>string</strong> <span class="label label-default">Optional</span>
                   <p>User profile picture</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>timezone</i>
+                </td>
+                <td>
+                  <strong>string</strong> <span class="label label-default">Optional</span>
+                  <p>User timezone</p>
                 </td>
               </tr>
             </tbody>

@@ -1,9 +1,12 @@
 // Overides
 
 pre {
+  padding: 1em;
+  background-color: $gray-lightest;
+  border: 1px solid $gray-lighter;
   border-left: .3rem solid $brand-primary;
-  color: #655d5d;
-  border-radius: 0;
+  color: $body-color;
+  border-radius: $border-radius;
 }
 
 .form-control:focus {
@@ -15,6 +18,6 @@ pre {
 
 .nav-stacked {
   .nav-header {
-    padding-left: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width-base / 2;
   }
 }

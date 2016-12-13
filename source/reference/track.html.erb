@@ -4,7 +4,7 @@ description: Documentation of the track API endpoint allowing to ingest both sen
 keywords:
 ---
 
-<div class="container p-b-lg" id="main">
+<div class="container pb-3" id="main">
   <div class="row">
     <div class="col-sm-3">
       <%= partial 'navigation' %>
@@ -41,132 +41,130 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
       <h4 class="page-header">Parameters</h4>
 
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <table class="table m-b-0">
-            <thead>
-              <tr>
-                <th>Param</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <i>distinct_id</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>A unique message ID issued by the messenging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>platform</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>The platform on which the message is sent. Possible values: <code>slack</code>, <code>messenger</code>, <code>kik</code>, <code>sms</code>, <code>web</code>, <code>api</code>.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>provider</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>The provider on which which the message is sent. Possible values: <code>messenger</code>, <code>kik</code>, <code>smooch</code>.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>mtype</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>Message type. Refer to <a href="/reference/message#types">message types</a> for supported values.</p>
-                  <p>Note that additional <code>properties</code> are expected depending of the message type.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>sent_at</i>
-                </td>
-                <td>
-                  <strong>number</strong> <span class="label label-primary">Required</span>
-                  <p>A <a href="https://en.wikipedia.org/wiki/Unix_time">Unix timestamp</a> with milliseconds.</p>
-                  <p>Note that precision is important and preferable in all cases since a system could generate multiple messages during the same second.</p>
-                  <p>Example: <code>1474215799.4329312</code>, <code>1474215799.432</code> or <code>1474215799</code> are valid values.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>properties</i>
-                </td>
-                <td>
-                  <strong>hash</strong> <span class="label label-default">Optional</span>
-                  <p>Additional message properties. Mostly used to add interesting metadata dependent on <a href="#message-types">message types</a>.</p>
+      <div class="card">
+        <table class="table m-b-0">
+          <thead>
+            <tr>
+              <th>Param</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <i>distinct_id</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>A unique message ID issued by the messenging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>platform</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>The platform on which the message is sent. See all <a href="/message#platforms">accepted values</a>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>provider</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>The provider on which which the message is sent. See all <a href="/message#providers">accepted values</a>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>mtype</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>Message type. Refer to <a href="/reference/message#types">message types</a> for supported values.</p>
+                <p>Note that additional <code>properties</code> are expected depending of the message type.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>sent_at</i>
+              </td>
+              <td>
+                <strong>number</strong> <span class="tag tag-success">Required</span>
+                <p>A <a href="https://en.wikipedia.org/wiki/Unix_time">Unix timestamp</a> with milliseconds.</p>
+                <p>Note that precision is important and preferable in all cases since a system could generate multiple messages during the same second.</p>
+                <p>Example: <code>1474215799.4329312</code>, <code>1474215799.432</code> or <code>1474215799</code> are valid values.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>properties</i>
+              </td>
+              <td>
+                <strong>hash</strong> <span class="tag tag-default">Optional</span>
+                <p>Additional message properties. Mostly used to add interesting metadata dependent on <a href="#message-types">message types</a>.</p>
 
-                  <hr>
+                <hr>
 
-                  <p>The following properties can always be combined to <a href="/reference/message#types">message types</a> specific ones.</p>
+                <p>The following properties can always be combined to <a href="/reference/message#types">message types</a> specific ones.</p>
 
-                  <table class="table m-b-0">
-                    <thead>
-                      <tr>
-                        <th>Property</th>
-                        <th>Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <i>confidence</i>
-                        </td>
-                        <td>
-                          <strong>float</strong> <span class="label label-default">Optional</span>
-                          <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Luis.ai, etc.</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>conversation</strong>
-                  <i>distinct_id</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>A unique conversation ID issued by the messenging platform.</p>
-                  <p>If the <code>distinct_id</code> is seen for the first time, then a new <%= link_to 'Conversation', '/reference/conversation.html' %> will be created.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>creator</strong>
-                  <i>distinct_id</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>ID of sender, either a unique user ID or the bot's ID.</p>
-                  <p>If the <code>distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'Interlocutor', '/reference/interlocutor.html' %> will be created.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>creator</strong>
-                  <i>type</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>Either <code>interlocutor</code> or <code>bot</code>. Case insensitive.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                <table class="table m-b-0">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <i>confidence</i>
+                      </td>
+                      <td>
+                        <strong>float</strong> <span class="tag tag-default">Optional</span>
+                        <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Luis.ai, etc.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>conversation</strong>
+                <i>distinct_id</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>A unique conversation ID issued by the messenging platform.</p>
+                <p>If the <code>distinct_id</code> is seen for the first time, then a new <%= link_to 'Conversation', '/reference/conversation.html' %> will be created.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>creator</strong>
+                <i>distinct_id</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>ID of sender, either a unique user ID or the bot's ID.</p>
+                <p>If the <code>distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'Interlocutor', '/reference/interlocutor.html' %> will be created.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>creator</strong>
+                <i>type</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>Either <code>interlocutor</code> or <code>bot</code>. Case insensitive.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

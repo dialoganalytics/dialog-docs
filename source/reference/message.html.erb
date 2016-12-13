@@ -4,7 +4,7 @@ description: Documentation for the message API resource. A Message represents an
 keywords:
 ---
 
-<div class="container p-b-lg" id="main">
+<div class="container pb-3" id="main">
   <div class="row">
     <div class="col-sm-3">
       <%= partial 'navigation' %>
@@ -78,8 +78,8 @@ keywords:
 
       <h4 class="page-header" id="types">Message types</h4>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div class="card">
+        <div class="card-header">
           <code>image</code> <code>audio</code> <code>video</code> <code>file</code> <code>link</code>
         </div>
 
@@ -96,7 +96,7 @@ keywords:
                 <i>url</i>
               </td>
               <td>
-                <strong>string</strong> <span class="label label-primary">Required</span>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
                 <p>URL</p>
               </td>
             </tr>
@@ -117,8 +117,8 @@ keywords:
 
 <hr>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div class="card">
+        <div class="card-header">
           <code>location</code>
         </div>
 
@@ -135,7 +135,7 @@ keywords:
                 <i>lat</i>
               </td>
               <td>
-                <strong>float</strong> <span class="label label-primary">Required</span>
+                <strong>float</strong> <span class="tag tag-success">Required</span>
                 <p>Latitude</p>
               </td>
             </tr>
@@ -144,7 +144,7 @@ keywords:
                 <i>lng</i>
               </td>
               <td>
-                <strong>float</strong> <span class="label label-primary">Required</span>
+                <strong>float</strong> <span class="tag tag-success">Required</span>
                 <p>Longitude</p>
               </td>
             </tr>

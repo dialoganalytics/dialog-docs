@@ -4,7 +4,7 @@ description: Documentation for the interlocutor API resource. An Interlocutor re
 keywords:
 ---
 
-<div class="container p-b-lg" id="main">
+<div class="container pb-3" id="main">
   <div class="row">
     <div class="col-sm-3">
       <%= partial 'navigation.html.erb' %>
@@ -55,109 +55,107 @@ curl -X POST -H "Content-type: application/json" -d '{
 
       <h4 class="page-header">Parameters</h4>
 
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <table class="table m-b-0">
-            <thead>
-              <tr>
-                <th>Param</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <i>distinct_id</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-primary">Required</span>
-                  <p>A unique user ID issued by the messenging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>username</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>Username</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>phone</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User phone number. Minimum length 10 characters. Maximum length 25 characters.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>email</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User email</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>first_name</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User first name</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>last_name</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User last name</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>gender</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User gender</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>locale</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User locale</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>profile_picture</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User profile picture</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i>timezone</i>
-                </td>
-                <td>
-                  <strong>string</strong> <span class="label label-default">Optional</span>
-                  <p>User timezone</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card">
+        <table class="table m-b-0">
+          <thead>
+            <tr>
+              <th>Param</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <i>distinct_id</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>A unique user ID issued by the messenging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>username</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>Username</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>phone</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User phone number. Minimum length 10 characters. Maximum length 25 characters.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>email</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User email</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>first_name</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User first name</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>last_name</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User last name</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>gender</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User gender</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>locale</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User locale</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>profile_picture</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User profile picture</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>timezone</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>User timezone</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <h4 class="page-header" id="retrieve">Retrieve an interlocutor</h4>

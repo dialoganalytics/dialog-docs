@@ -25,6 +25,7 @@
 #main {
   border: 1px solid $card-border-color;
   background-color: #FFF;
+  border-radius: $border-radius;
 }
 
 // Header
@@ -44,7 +45,7 @@
   }
 
   .nav-link {
-    padding: 0.2em 1em;
+    padding: 0.2em 0;
   }
 }
 

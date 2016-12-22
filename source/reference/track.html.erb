@@ -46,6 +46,8 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
       <h4 class="page-header">Parameters</h4>
 
+      <p>You must provide the <code>/track</code> endpoint with three core resources: <code>message</code>, <code>conversation</code>, and <code>interlocutor</code>.</p>
+
       <div class="card">
         <table class="table m-b-0">
           <thead>
@@ -109,7 +111,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>hash</strong> <span class="tag tag-default">Optional</span>
-                <p>Additional message properties. Mostly used to add interesting metadata dependent on <a href="#message-types">message types</a>.</p>
+                <p>Additional message properties. Mostly used to add required metadata dependent on <a href="/reference/message#types">message types</a>.</p>
 
                 <hr>
 
@@ -129,7 +131,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
                       </td>
                       <td>
                         <strong>float</strong> <span class="tag tag-default">Optional</span>
-                        <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Luis.ai, etc.</p>
+                        <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Wit.ai, etc.</p>
                       </td>
                     </tr>
                   </tbody>

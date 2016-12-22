@@ -31,7 +31,7 @@ keywords:
   "gender": "male",
   "locale": "us",
   "profile_picture": "http://spacex.com/elon.jpg",
-  "timezone": "Pacific Time (US & Canada)"
+  "timezone": "America/Los_Angeles"
   "created_at": 1472585700.314108
 }</pre>
 
@@ -49,7 +49,7 @@ curl -X POST -H "Content-type: application/json" -d '{
     "gender": "male",
     "locale": "us",
     "profile_picture": "http://spacex.com/elon.jpg",
-    "timezone": "Pacific Time (US & Canada)"
+    "timezone": "America/Los_Angeles"
   }
 }' 'https://api.dialoganalytics.com/v1/b/a925a32e/interlocutors?token=test'</pre>
 
@@ -151,7 +151,8 @@ curl -X POST -H "Content-type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-default">Optional</span>
-                <p>User timezone</p>
+                <p>User timezone as defined by in the <a href="http://www.iana.org/time-zones">IANA Time Zone Database</a>, which is also available in searchable format in Wikipedia's <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">List of tz database time zones</a>.</p>
+                <p>Example: <code>America/Los_Angeles</code>, <code>America/New_York</code>, <code>Europe/Stockholm</code>.</p>
               </td>
             </tr>
           </tbody>

@@ -81,8 +81,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
                 <i>provider</i>
               </td>
               <td>
-                <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>The provider on which which the message is sent. See all <a href="/message#providers">accepted values</a>.</p>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>The provider on which which the message is sent. This is a user-defined attribute that can be used to segment and enforce some of your business logic.</p>
+                <p>Example: <code>smooch</code>, <code>botpress-dialog</code>.</p>
               </td>
             </tr>
             <tr>

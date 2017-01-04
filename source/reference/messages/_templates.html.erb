@@ -1,0 +1,372 @@
+<h3 id="template">Template</h3>
+
+<p><code>mtype</code> must be <code>template</code>. These template types are supported:</p>
+
+<ul>
+  <li>
+    <a href="#button-template">Button</a>
+  </li>
+  <li>
+    <a href="#generic-template">Generic</a>
+  </li>
+  <li>
+    <a href="#list-template">List</a>
+  </li>
+  <li>
+    <a href="#receipt-template">Receipt</a>
+  </li>
+</ul>
+
+<hr class="my-3">
+
+<h4 id="button-template">Button template</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template">specification for the button template</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Template type. Value must be <code>button</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>text</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Text</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>buttons</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-success">Required</span>
+          <p>A collection of <a href="#buttons">button</a> objects.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "template",
+    "properties": {
+      "type": "button",
+      "text": "Hello world!",
+      "buttons": [{
+        "type": "web_url",
+        "url": "http://example.com",
+        "title": "Show website"
+      }]
+    }
+  }
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="generic-template">Generic template</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template">specification for the generic template</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Template type. Value must be <code>generic</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>elements</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-success">Required</span>
+          <p>A collection of <code>element</code> objects. See Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template#element">specification for generic template elements</a></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "template",
+    "properties": {
+      "type": "generic",
+      "elements": [{
+        "title": "Hello world!",
+        "image_url": "http://example.com/example.png",
+        "subtitle": "This is an example"
+      }]
+    }
+  }
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="list-template">List template</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/list-template">specification for the list template</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Template type. Value must be <code>list</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>elements</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-success">Required</span>
+          <p>A collection of <code>element</code> objects. See Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/list-template#element">specification for list template elements</a>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>buttons</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-default">Optional</span>
+          <p>A collection of <a href="#buttons">button</a> objects.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "template",
+    "properties": {
+      "type": "list",
+      "elements": [{
+        "title": "Hello world!",
+        "image_url": "http://example.com/example.png",
+        "subtitle": "This is an example",
+        "buttons": [{
+          "title": "Buy",
+          "type": "web_url",
+          "url": "http://example.com/buy"
+        }]
+      }],
+      "buttons": [{
+        "type": "web_url",
+        "url": "http://example.com",
+        "title": "View More"
+      }]
+    }
+  }
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="receipt-template">Receipt template</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template">specification for the receipt template</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Template type. Value must be <code>receipt</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>recipient_name</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Recipient's name.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>merchant_name</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-default">Optional</span>
+          <p>Merchant's name.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>order_number</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Order number.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>currency</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Order's currency.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>payment_method</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Payment method. This can be a custom string.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>timestamp</i>
+        </td>
+        <td>
+          <strong>number</strong> <span class="tag tag-default">Optional</span>
+          <p>A <a href="https://en.wikipedia.org/wiki/Unix_time">Unix timestamp</a> of the order with milliseconds.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>order_url</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-default">Optional</span>
+          <p>Order's URL.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>elements</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-default">Optional</span>
+          <p>Collection of <code>element</code> objects. See Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template#element">specification for receipt template elements</a></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>address</i>
+        </td>
+        <td>
+          <strong>object</strong> <span class="tag tag-default">Optional</span>
+          <p>Shipping address. Must be a <code>address</code> object. See Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template#address">specification for receipt template address</a>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>summary</i>
+        </td>
+        <td>
+          <strong>object</strong> <span class="tag tag-success">Required</span>
+          <p>Payment summary. Must be a <code>summary</code> object. See Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template#summary">specification for receipt template sumarry</a>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>adjustments</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-default">Optional</span>
+          <p>A collection of <code>adjustment</code> objects. See Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template#adjustment">specification for receipt template adjustment</a>.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "template",
+    "properties": {
+      "type": "receipt",
+      "recipient_name": "Philippe Dionne",
+      "order_number": "1234567890",
+      "currency": "USD",
+      "payment_method": "Visa 1234",
+      "order_url": "http://example.com/orders/1",
+      "timestamp": "1428444852",
+      "elements":[{
+        "title": "White T-Shirt",
+        "subtitle": "100% Cotton",
+        "quantity": 2,
+        "price": 25,
+        "currency": "USD",
+        "image_url": "http://example.com/products/1.jpg"
+      }],
+      "address":{
+        "street_1": "226 rue Saint-Joseph Est",
+        "street_2": "",
+        "city": "Québec",
+        "postal_code": "G1K 3A9",
+        "state": "QC",
+        "country": "CA"
+      },
+      "summary":{
+        "subtotal": 35.00,
+        "shipping_cost": 10,
+        "total_tax": 5,
+        "total_cost": 40
+      },
+      "adjustments":[{
+        "name": "$10 Off Coupon",
+        "amount": 10
+      }]
+    }
+  }
+}</pre>

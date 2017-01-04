@@ -1,0 +1,35 @@
+<h3>Multimedia</h3>
+
+<p><code>mtype</code> must be one the following: <code>image</code>, <code>audio</code>, <code>video</code>, <code>file</code>, <code>link</code> or <code>sticker</code>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>url</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>URL</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "audio",
+    "properties": {
+      "url": "http://example.com/asset.mp3"
+    }
+  }
+}</pre>

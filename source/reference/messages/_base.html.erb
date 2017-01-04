@@ -1,0 +1,83 @@
+<h4 id="text">Text</h4>
+
+<p><code>mtype</code> must be <code>text</code>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>text</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Message content</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "text",
+    "properties": {
+      "text": "Hello world!"
+    }
+  }
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="location">Location</h4>
+
+<p><code>mtype</code> must be <code>location</code>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>lat</i>
+        </td>
+        <td>
+          <strong>float</strong> <span class="tag tag-success">Required</span>
+          <p>Latitude</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>lng</i>
+        </td>
+        <td>
+          <strong>float</strong> <span class="tag tag-success">Required</span>
+          <p>Longitude</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "location",
+    "properties": {
+      "lat": 46.8565177,
+      "lng": -71.4861574
+    }
+  }
+}</pre>

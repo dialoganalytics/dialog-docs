@@ -1,0 +1,216 @@
+<h3 id="buttons">Buttons</h3>
+
+<p>Buttons are used with <a href="#template">template</a> messages. These button types are supported:</p>
+
+<ul>
+  <li>
+    <a href="#url-button">URL</a>
+  </li>
+  <li>
+    <a href="#postback-button">Postback</a>
+  </li>
+  <li>
+    <a href="#call-button">Call</a>
+  </li>
+  <li>
+    <a href="#share-button">Share</a>
+  </li>
+  <li>
+    <a href="#buy-button">Buy</a>
+  </li>
+</ul>
+
+<hr class="my-3">
+
+<h4 id="url-button">URL button</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/url-button">specification for the URL button</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button type. Value must be <code>web_url</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>title</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button title</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>url</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button URL</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "type": "web_url",
+  "title": "Dialog",
+  "url": "http://dialoganalytics.com"
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="postback-button">Postback button</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/postback-button">specification for the postback button</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button type. Value must be <code>postback</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>title</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button title</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "type": "postback",
+  "title": "Yes"
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="call-button">Call button</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/call-button">specification for the call button</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button type. Value must be <code>phone_number</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>title</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button title.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>payload</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-default">Optional</span>
+          <p>Phone number.</p>
+          <p>Example: <code>+16505551234</code>.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "type": "phone_number",
+  "title": "Call me maybe",
+  "payload": "+16505551234"
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="share-button">Share button</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/share-button">specification for the share button</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button type. Value must be <code>element_share</code>.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "type": "element_share"
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="buy-button">Buy button</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/buy-button">specification for the buy button</a>.</p>
+
+<div class="callout callout-default">
+  <div class="callout-content">
+    This feature is coming soon.
+  </div>
+</div>

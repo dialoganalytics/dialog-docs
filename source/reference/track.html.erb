@@ -64,7 +64,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>A unique message ID issued by the messaging platform. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
+                <p>A unique message ID issued by the messaging platform. ID must be unique amongst the bot's message IDs. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
               </td>
             </tr>
             <tr>
@@ -147,7 +147,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>A unique conversation ID issued by the messaging platform.</p>
+                <p>A unique conversation ID issued by the messaging platform. ID must be unique amongst the bot's conversation IDs.</p>
                 <p>If the <code>distinct_id</code> is seen for the first time, then a new <%= link_to 'conversation', '/reference/conversation.html' %> will be created.</p>
               </td>
             </tr>
@@ -158,7 +158,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>ID of sender, either a unique user ID or the bot's ID.</p>
+                <p>ID of sender, either a unique user ID or the bot's ID. If type is <code>interlocutor</code> then ID must be unique amongst the bot's interlocutor IDs.</p>
                 <p>If the <code>distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'interlocutor', '/reference/interlocutor.html' %> will be created.</p>
               </td>
             </tr>

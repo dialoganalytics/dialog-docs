@@ -81,3 +81,41 @@
     }
   }
 }</pre>
+
+<hr class="my-3">
+
+<h4 id="quick-reply">Quick reply</h4>
+
+<p><code>mtype</code> must be <code>quick_reply</code>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>text</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Message content</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "quick_reply",
+    "properties": {
+      "text": "Hello world!"
+    }
+  }
+}</pre>

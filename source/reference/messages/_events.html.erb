@@ -1,0 +1,159 @@
+<h3 id="event">Event</h3>
+
+<p><code>mtype</code> must be <code>event</code>. These event types are supported:</p>
+
+<ul>
+  <li>
+    <a href="#optin-event">Optin</a>
+  </li>
+  <li>
+    <a href="#postback-event">Postback</a>
+  </li>
+  <li>
+    <a href="#referral-event">Referral</a>
+  </li>
+</ul>
+
+<hr class="my-3">
+
+<h4 id="optin-event">Optin event</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/webhook-reference/optin">specification for the optin event</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Event type. Value must be <code>optin</code>.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "event",
+    "properties": {
+      "type": "optin"
+    }
+  }
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="postback-event">Postback event</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback">specification for the postback event</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Event type. Value must be <code>postback</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>text</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Postback text content</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "event",
+    "properties": {
+      "type": "postback",
+      "text": "Hello world!"
+    }
+  }
+}</pre>
+
+<hr class="my-3">
+
+<h4 id="referral-event">Referral event</h4>
+
+<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/webhook-reference/referral">specification for the referral event</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Event type. Value must be <code>referral</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>source</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-default">Optional</span>
+          <p>Referral source.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>ref_type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-default">Optional</span>
+          <p>Referral type.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<pre>
+{
+  "message": {
+    "mtype": "event",
+    "properties": {
+      "type": "referral",
+      "source": "SHORTLINK",
+      "ref_type": "OPEN_THREAD"
+    }
+  }
+}</pre>

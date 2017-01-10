@@ -69,17 +69,17 @@ keywords:
 
       <h2 class="page-header" id="types">Message types</h2>
 
-      <p>Message types are broken down in three categories:</p>
+      <p>Message types are broken down in these categories:</p>
 
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <h5>Base</h5>
           <ul>
             <li><code>text</code></li>
             <li><code>location</code> </li>
           </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <h5>Multimedia</h5>
           <ul>
             <li><code>image</code> </li>
@@ -90,7 +90,15 @@ keywords:
             <li><code>sticker</code></li>
           </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
+          <h5>Event</h5>
+          <ul>
+            <li><a href="#optin-event">optin</a></li>
+            <li><a href="#postback-event">postback</a></li>
+            <li><a href="#referral-event">referral</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
           <h5>Template</h5>
           <ul>
             <li><code>button</code> </li>
@@ -108,6 +116,10 @@ keywords:
       <hr class="my-3">
 
       <%= partial 'reference/messages/multimedia' %>
+
+      <hr class="my-3">
+
+      <%= partial 'reference/messages/events' %>
 
       <hr class="my-3">
 

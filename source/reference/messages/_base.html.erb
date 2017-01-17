@@ -20,6 +20,15 @@
           <p>Message content</p>
         </td>
       </tr>
+      <tr>
+        <td>
+          <i>quick_replies</i>
+        </td>
+        <td>
+          <strong>array</strong> <span class="tag tag-default">Optional</span>
+          <p>A collection of <code>quick reply</code> objects.</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -29,7 +38,14 @@
   "message": {
     "mtype": "text",
     "properties": {
-      "text": "Hello world!"
+      "text": "Hello world!",
+      quick_replies: [{
+        "type":"text",
+        "title":"Yes"
+      }, {
+        "type":"text",
+        "title":"No"
+      }]
     }
   }
 }</pre>

@@ -13,7 +13,7 @@ keywords:
     <div class="col-sm-9">
       <h2 class="page-header" id="interlocutor">Interlocutor</h2>
 
-      <p class="lead">This endpoint allows to interact with <a href="/concepts#interlocutor">interlocutors</a>.</p>
+      <p class="lead">This endpoint allows to interact with <%= link_to "interlocutors", "/concepts.html#interlocutor" %>.</p>
 
       <h4 class="page-header" id="object">Interlocutor object</h4>
 
@@ -71,7 +71,7 @@ curl -X POST -H "Content-type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>A unique user ID issued by the messaging platform. ID must be unique amongst the bot's interlocutor IDs. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
+                <p>A unique user ID issued by the messaging platform. ID must be unique amongst the bot's interlocutor IDs. This enables the API to support <%= link_to "idempotent requests", "/reference.html#idempotent-requests" %>.</p>
               </td>
             </tr>
             <tr>

@@ -13,7 +13,7 @@ keywords:
     <div class="col-sm-9">
       <h2 class="page-header" id="track">Track</h2>
 
-      <p class="lead">This endpoint allows to track <a href="/concepts#conversation">conversations</a>, <a href="/concepts#interlocutor">interlocutors</a> and <a href="/concepts#message">messages</a> in a single API call. It's the easiest way to instrument a conversational application without having to manage state.</p>
+      <p class="lead">This endpoint allows to track <%= link_to "conversations", "/concepts.html#conversation" %>, <%= link_to "interlocutors", "/concepts.html#interlocutor" %> and <%= link_to "messages", "/concepts.html#message" %> in a single API call. It's the easiest way to instrument a conversational application without having to manage state.</p>
 
       <h4 class="page-header">Request</h4>
 
@@ -64,7 +64,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>A unique message ID issued by the messaging platform. ID must be unique amongst the bot's message IDs. This enables the API to support <a href="/reference#idempotent-requests">idempotent requests</a>.</p>
+                <p>A unique message ID issued by the messaging platform. ID must be unique amongst the bot's message IDs. This enables the API to support <%= link_to "idempotent requests", "/reference.html#idempotent-requests" %>.</p>
               </td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>Message type. Refer to <a href="/reference/message#types">message types</a> for supported values.</p>
+                <p>Message type. Refer to <%= link_to "message types", "/reference/message.html#types" %> for supported values.</p>
                 <p>Note that additional <code>properties</code> are expected depending of the message type.</p>
               </td>
             </tr>
@@ -113,11 +113,11 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>hash</strong> <span class="tag tag-default">Optional</span>
-                <p>Additional message properties. Mostly used to add required metadata dependent on <a href="/reference/message#types">message types</a>.</p>
+                <p>Additional message properties. Mostly used to add required metadata dependent on <%= link_to "message types", "/reference.html/message#types" %>.</p>
 
                 <hr>
 
-                <p>The following properties can always be combined to <a href="/reference/message#types">message types</a> specific ones.</p>
+                <p>The following properties can always be combined to <%= link_to "message types", "/reference/message.html#types" %> specific ones.</p>
 
                 <table class="table mb-0">
                   <thead>

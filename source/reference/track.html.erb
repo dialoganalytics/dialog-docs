@@ -49,9 +49,12 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
       <h4 class="page-header">Parameters</h4>
 
-      <p>You must provide the <code>/track</code> endpoint with three core resources: <code>message</code>, <code>conversation</code>, and <code>interlocutor</code>.</p>
+      <p>You must provide the <code>/track</code> endpoint with three core resources: <code>message</code>, <code>conversation</code>, and <code>creator</code>.</p>
 
       <div class="card">
+        <div class="card-header">
+          Message
+        </div>
         <table class="table mb-0">
           <thead>
             <tr>
@@ -62,7 +65,6 @@ curl -X POST -H "Content-Type: application/json" -d '{
           <tbody>
             <tr>
               <td>
-                <strong>message</strong>
                 <i>distinct_id</i>
               </td>
               <td>
@@ -76,17 +78,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>The platform on which the message is sent. See all <a href="/message#platforms">accepted values</a>.</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <i>provider</i>
-              </td>
-              <td>
-                <strong>string</strong> <span class="tag tag-default">Optional</span>
-                <p>The provider on which which the message is sent. This is a user-defined attribute that can be used to segment and enforce some of your business logic.</p>
-                <p>Example: <code>smooch</code>, <code>botpress-dialog</code>.</p>
+                <p>The platform on which the message is sent. See all <%= link_to "accepted values", "/reference/message.html#platforms" %>.</p>
               </td>
             </tr>
             <tr>
@@ -108,6 +100,16 @@ curl -X POST -H "Content-Type: application/json" -d '{
                 <p>A <a href="https://en.wikipedia.org/wiki/Unix_time">Unix timestamp</a> with milliseconds.</p>
                 <p>Note that precision is important and preferable in all cases since a system could generate multiple messages during the same second.</p>
                 <p>Example: <code>1474215799.4329312</code>, <code>1474215799.432</code> or <code>1474215799</code> are valid values.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>provider</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-default">Optional</span>
+                <p>The provider on which which the message is sent. This is a user-defined attribute that can be used to segment and enforce some of your business logic.</p>
+                <p>Example: <code>smooch</code>, <code>botpress-dialog</code>.</p>
               </td>
             </tr>
             <tr>
@@ -143,9 +145,24 @@ curl -X POST -H "Content-Type: application/json" -d '{
                 </table>
               </td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Conversation
+        </div>
+        <table class="table mb-0">
+          <thead>
+            <tr>
+              <th>Param</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>
-                <strong>conversation</strong>
                 <i>distinct_id</i>
               </td>
               <td>
@@ -154,9 +171,24 @@ curl -X POST -H "Content-Type: application/json" -d '{
                 <p>If the <code>distinct_id</code> is seen for the first time, then a new <%= link_to 'conversation', '/reference/conversation.html' %> will be created.</p>
               </td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Creator
+        </div>
+        <table class="table mb-0">
+          <thead>
+            <tr>
+              <th>Param</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>
-                <strong>creator</strong>
                 <i>distinct_id</i>
               </td>
               <td>
@@ -172,6 +204,23 @@ curl -X POST -H "Content-Type: application/json" -d '{
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
                 <p>Either <code>interlocutor</code> or <code>bot</code>. Case insensitive.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>username</i>,
+                <i>phone</i>,
+                <i>email</i>,
+                <i>first_name</i>,
+                <i>last_name</i>,
+                <i>gender</i>,
+                <i>locale</i>,
+                <i>profile_picture</i>,
+                <i>timezone</i>
+              </td>
+              <td>
+                <span class="tag tag-default">Optional</span>
+                <p>If <code>type</code> is <code>interlocutor</code>, then additional <%= link_to "interlocutor properties", "/reference/interlocutor.html#create" %> can also be set.</p>
               </td>
             </tr>
           </tbody>

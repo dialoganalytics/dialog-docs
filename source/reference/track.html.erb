@@ -35,12 +35,15 @@ curl -X POST -H "Content-Type: application/json" -d '{
   "creator": {
     "distinct_id": "<span class="js-distinct-id"></span>",
     "type": "interlocutor",
+    "username": "elon",
+    "phone": "141812312345",
+    "email": "elon@spacex.com",
     "first_name": "Elon",
     "last_name": "Musk",
     "gender": "male",
-    "locale": "US",
+    "locale": "us",
     "profile_picture": "http://spacex.com/elon.jpg",
-    "timezone": "America/Los_Angeles"
+    "timezone": -7
   }
 }' 'https://api.dialoganalytics.com/v1/b/a925a32e/track?token=test'</pre>
 

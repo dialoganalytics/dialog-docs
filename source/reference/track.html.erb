@@ -20,7 +20,6 @@ keywords:
       <pre>
 curl -X POST -H "Content-Type: application/json" -d '{
   "message": {
-    "distinct_id": "<span class="js-distinct-id"></span>",
     "platform": "messenger",
     "provider": "dialog-node",
     "mtype": "text",
@@ -63,15 +62,6 @@ curl -X POST -H "Content-Type: application/json" -d '{
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <i>distinct_id</i>
-              </td>
-              <td>
-                <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>A unique message ID issued by the messaging platform. ID must be unique amongst the bot's message IDs. This enables the API to support <%= link_to "idempotent requests", "/reference.html#idempotent-requests" %>.</p>
-              </td>
-            </tr>
             <tr>
               <td>
                 <i>platform</i>

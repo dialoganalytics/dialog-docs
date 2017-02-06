@@ -13,7 +13,7 @@ keywords:
     <div class="col-sm-9">
       <h2 class="page-header" id="track">Track</h2>
 
-      <p class="lead">This endpoint allows to track <%= link_to "conversations", "/concepts.html#conversation" %>, <%= link_to "interlocutors", "/concepts.html#interlocutor" %> and <%= link_to "messages", "/concepts.html#message" %> in a single API call. It's the easiest way to instrument a conversational application without having to manage state.</p>
+      <p class="lead">This endpoint allows tracking <%= link_to "conversations", "/concepts.html#conversation" %>, <%= link_to "interlocutors", "/concepts.html#interlocutor" %> and <%= link_to "messages", "/concepts.html#message" %> in a single API call. It's the easiest way to instrument a conversational application without having to manage state.</p>
 
       <h4 class="page-header">Request</h4>
 
@@ -78,7 +78,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
                 <p>Message type. Refer to <%= link_to "message types", "/reference/message.html#types" %> for supported values.</p>
-                <p>Note that additional <code>properties</code> are expected depending of the message type.</p>
+                <p>Note that additional <code>properties</code> are expected depending on the message type.</p>
               </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-default">Optional</span>
-                <p>The provider on which which the message is sent. This is a user-defined attribute that can be used to segment and enforce some of your business logic.</p>
+                <p>The provider via which the message is sent. This is a user-defined attribute that can be used to segment and enforce some of your business logic.</p>
                 <p>Example: <code>smooch</code>, <code>botpress-dialog</code>.</p>
               </td>
             </tr>
@@ -183,7 +183,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>ID of sender, either a unique user ID or the bot's ID. If type is <code>interlocutor</code> then ID must be unique amongst the bot's interlocutor IDs.</p>
+                <p>ID of the sender, either a unique user ID or the bot's ID. If the type is <code>interlocutor</code> then ID must be unique amongst the bot's interlocutor IDs.</p>
                 <p>If the <code>distinct_id</code> is from a user and is seen for the first time, then a new <%= link_to 'interlocutor', '/reference/interlocutor.html' %> will be created.</p>
               </td>
             </tr>
@@ -210,7 +210,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
               </td>
               <td>
                 <span class="tag tag-default">Optional</span>
-                <p>If <code>type</code> is <code>interlocutor</code>, then additional <%= link_to "interlocutor properties", "/reference/interlocutor.html#create" %> can also be set.</p>
+                <p>If the <code>type</code> is <code>interlocutor</code>, then additional <%= link_to "interlocutor properties", "/reference/interlocutor.html#create" %> can also be set.</p>
               </td>
             </tr>
           </tbody>

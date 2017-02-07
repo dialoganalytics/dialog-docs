@@ -207,10 +207,59 @@
 
 <h4 id="buy-button">Buy button</h4>
 
-<p>Compatible with Facebook Messenger's <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference/buy-button">specification for the buy button</a>.</p>
-
-<div class="callout callout-default">
-  <div class="callout-content">
-    This feature is coming soon.
-  </div>
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <i>type</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button type. Value must be <code>payment</code>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>title</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Button title.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>currency</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Payment currency.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <i>total</i>
+        </td>
+        <td>
+          <strong>string</strong> <span class="tag tag-success">Required</span>
+          <p>Payment total amount.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+<pre>
+{
+  "type": "payment",
+  "title": "Buy",
+  "currency": "usd",
+  "total": 9.99
+}</pre>

@@ -11,7 +11,13 @@ s3_bucket: docs.dialoganalytics.com
 #   "assets/*": 6000
 #   "*": 300
 
-cache_control: public, max-age=31536000
+# 31536000 -> 1 year
+# 86400 -> 1 day
+cache_control:
+  "fonts/*": public, no-transform, max-age=31536000
+  "images/*": public, no-transform, max-age=31536000
+  "stylesheets/*": public, no-transform, max-age=31536000
+  "*": public, no-transform, max-age=86400
 
 # gzip:
 #   - .html

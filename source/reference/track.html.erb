@@ -24,6 +24,12 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "provider": "dialog-node",
     "mtype": "text",
     "sent_at": <span class="js-time"></span>,
+    "nlp": {
+      "intents": [{
+        "name": "create.order",
+        "confidence": 0.98
+      }]
+    },
     "properties": {
       "text": "Hello world"
     }
@@ -104,15 +110,17 @@ curl -X POST -H "Content-Type: application/json" -d '{
             </tr>
             <tr>
               <td>
-                <i>properties</i>
+                <i>nlp</i>
               </td>
               <td>
                 <strong>hash</strong> <span class="tag tag-default">Optional</span>
-                <p>Additional message properties. Mostly used to add required metadata dependent on <%= link_to "message types", "/reference.html/message#types" %>.</p>
+                <p>Natural Language Processing (NLP) or Natural Language Understanging (NLU) message metadata.</p>
 
                 <hr>
 
-                <p>The following properties can always be combined to <%= link_to "message types", "/reference/message.html#types" %> specific ones.</p>
+                <i>intents</i>
+                <strong>array</strong>
+                <p>Collection of intents detected in the message.</p>
 
                 <table class="table mb-0">
                   <thead>
@@ -124,15 +132,33 @@ curl -X POST -H "Content-Type: application/json" -d '{
                   <tbody>
                     <tr>
                       <td>
+                        <i>name</i>
+                      </td>
+                      <td>
+                        <strong>string</strong> <span class="tag tag-success">Required</span>
+                        <p>Name of the intent. Maximum length of 256 characters.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <i>confidence</i>
                       </td>
                       <td>
                         <strong>float</strong> <span class="tag tag-default">Optional</span>
-                        <p>NLP/NLU entity extraction confidence in percent. This information may be available if you use a provider like Api.ai, Wit.ai, etc.</p>
+                        <p>Confidence of the intent's classification in percent.</p>
                       </td>
                     </tr>
                   </tbody>
                 </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>properties</i>
+              </td>
+              <td>
+                <strong>hash</strong> <span class="tag tag-default">Optional</span>
+                <p>Additional message properties. Used to add required metadata dependent on <%= link_to "message types", "/reference.html/message#types" %>.</p>
               </td>
             </tr>
           </tbody>

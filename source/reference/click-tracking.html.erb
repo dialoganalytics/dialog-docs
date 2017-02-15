@@ -1,6 +1,6 @@
 ---
 title: Click Tracking - Dialog Documentation
-description: Documentation of the click API endpoint allowing to track links clicked by users inside a conversation.
+description: Documentation of the click API endpoint allowing to track links clicked by interlocutors inside a conversation.
 keywords:
 ---
 
@@ -13,15 +13,57 @@ keywords:
     <div class="col-sm-9">
       <h2 class="page-header" id="click-tracking">Click Tracking</h2>
 
-      <p class="lead">This action allows to track links clicked by users inside a conversation.</p>
+      <p class="lead">This action allows to track links clicked by interlocutors inside a conversation.</p>
 
-      <p>To use click tracking, wrap all your URLs like this: <code>https://api.dialoganalytics.com/v1/click/:id?url=http%3A%2F%2Fexample.com</code>, where <code>:id</code> is a unique conversation ID issued by the provider or the platform.</p>
+      <p>Use our <%= link_to "Ruby", "https://github.com/dialoganalytics.com/dialog-ruby" %> or <%= link_to "Node.js", "https://github.com/dialoganalytics.com/dialog-node" %> SDKs to generate trackable URLs:</p>
 
-      <p>The <code>url</code> should be encoded according to the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent</a> specification.</p>
+      <pre>
+dialog.link('http://example.com', user.id)
+</pre>
+
+      <p>Or generate your own URLs by respecting this pattern:</p>
+
+      <pre>
+https://api.dialoganalytics.com/v1/b/{botID}/clicks/?id={interlocutorDistinctId}&url={encodedUrl}
+</pre>
 
       <p>Dialog will track every click and redirect the user to the URL specified as the <code>url</code> parameter.</p>
 
-      <p>If the conversation doesn't exist on Dialog's end, either because the data has been reset or because the conversation hasn't been created yet, the click event will be discarded. The redirection happens at <strong>all times</strong>.</p>
+      <p>If the interlocutor doesn't exist yet on Dialog's end, either because the data has been reset or because the record hasn't been persisted yet, the click event will be discarded. The redirection happens at <strong>all times</strong>.</p>
+
+      <h4 class="page-header">Parameters</h4>
+
+      <div class="card">
+        <table class="table mb-0">
+          <thead>
+            <tr>
+              <th>Param</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <i>url</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>A <code>url</code> encoded according to the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent</a> specification.</p>
+                <p>Example: <code>http%3A%2F%2Fexample.com</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i>id</i>
+              </td>
+              <td>
+                <strong>string</strong> <span class="tag tag-success">Required</span>
+                <p>Interlocutor distinct Id, as usually provided by the platform or the provider.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="callout callout-primary">
         <div class="callout-content">

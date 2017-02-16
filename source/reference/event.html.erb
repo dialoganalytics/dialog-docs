@@ -35,7 +35,7 @@ curl -X POST -H "Content-type: application/json" -d '{
   "event": {
     "created_at": 1474215799.432,
     "name": "subscribed",
-    "interlocutor_id": "<span class="js-distinct-id"></span>",
+    "id": "<span class="js-distinct-id"></span>",
     "properties": {
       "content": "motivation-10"
     }
@@ -74,11 +74,11 @@ curl -X POST -H "Content-type: application/json" -d '{
             </tr>
             <tr>
               <td>
-                <i>interlocutor_id</i>
+                <i>id</i>
               </td>
               <td>
                 <strong>string</strong> <span class="tag tag-default">Optional</span>
-                <p>You may optionnally set an <code>interlocutor_id</code> to tie the event with the given <%= link_to "Interlocutor", "/concepts.html#interlocutor" %>.</p>
+                <p>You may optionnally pass an interlocutor's <code>distinct_id</code> to tie the event with the given <%= link_to "Interlocutor", "/concepts.html#interlocutor" %>.</p>
               </td>
             </tr>
             <tr>

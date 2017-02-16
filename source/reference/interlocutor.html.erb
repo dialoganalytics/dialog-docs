@@ -36,12 +36,24 @@ keywords:
   "created_at": "2017-01-09T22:25:43.394Z"
 }</pre>
 
+      <h4 class="page-header" id="list">List all interlocutors</h4>
+      <p>Returns a list of the bot's interlocutors. The interlocutors are returned sorted by creation date, with the most recent interlocutors appearing first.</p>
+
+      <pre>curl https://api.dialoganalytics.com/v1/b/:id/interlocutors</pre>
+
+      <h4 class="page-header" id="retrieve">Retrieve an interlocutor</h4>
+      <p>Retrieves the details of an existing interlocutor. You need only supply the unique bot and interlocutor identifier that was returned upon interlocutor creation.</p>
+
+      <pre>curl https://api.dialoganalytics.com/v1/b/:id/interlocutors/:id</pre>
+
       <h4 class="page-header" id="create">Create an interlocutor</h4>
+      <p>Creating an interlocutor is not possible through this endpoint, instead you should use the <%= link_to "track", "/reference/track.html" %> endpoint. This is because an interlocutor must be associated to a conversation at it's creation.</p>
+
+      <h4 class="page-header" id="update">Update an interlocutor</h4>
 
       <pre>
-curl -X POST -H "Content-type: application/json" -d '{
+curl -X PATCH -H "Content-type: application/json" -d '{
   "interlocutor": {
-    "distinct_id": "<span class="js-distinct-id"></span>",
     "username": "elon",
     "phone": "141812312345",
     "email": "elon@spacex.com",
@@ -52,7 +64,7 @@ curl -X POST -H "Content-type: application/json" -d '{
     "profile_picture": "http://spacex.com/elon.jpg",
     "timezone": -7
   }
-}' 'https://api.dialoganalytics.com/v1/b/a925a32e/interlocutors?token=test'</pre>
+}' 'https://api.dialoganalytics.com/v1/b/a925a32e/interlocutors/1?token=test'</pre>
 
       <h4 class="page-header">Parameters</h4>
 
@@ -65,15 +77,6 @@ curl -X POST -H "Content-type: application/json" -d '{
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <i>distinct_id</i>
-              </td>
-              <td>
-                <strong>string</strong> <span class="tag tag-success">Required</span>
-                <p>A unique user ID issued by the messaging platform. ID must be unique amongst the bot's interlocutor IDs.</p>
-              </td>
-            </tr>
             <tr>
               <td>
                 <i>username</i>
@@ -161,16 +164,6 @@ curl -X POST -H "Content-type: application/json" -d '{
           </tbody>
         </table>
       </div>
-
-      <h4 class="page-header" id="retrieve">Retrieve an interlocutor</h4>
-      <p>Retrieves the details of an existing interlocutor. You need only supply the unique bot and interlocutor identifier that was returned upon interlocutor creation.</p>
-
-      <pre>curl https://api.dialoganalytics.com/v1/b/:id/interlocutors/:id</pre>
-
-      <h4 class="page-header" id="list">List all interlocutors</h4>
-      <p>Returns a list of the bot's interlocutors. The interlocutors are returned sorted by creation date, with the most recent interlocutors appearing first.</p>
-
-      <pre>curl https://api.dialoganalytics.com/v1/b/:id/interlocutors</pre>
 
     </div>
   </div>

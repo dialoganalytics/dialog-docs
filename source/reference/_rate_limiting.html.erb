@@ -1,0 +1,27 @@
+<h3 class="page-header" id="rate-limiting">Rate Limiting</h3>
+<p>API calls are rate limited to 1000 per minute. Once you go over the rate limit you will receive an error. If you’re running into this error often and think you’ll need a higher rate limit, drop us a line at <a href="mailto:friends@dialoganalytics.com">friends@dialoganalytics.com</a>.</p>
+
+<div class="card">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Header</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>X-RateLimit-Limit</td>
+        <td>The maximum number of requests that the consumer is permitted to make per period.</td>
+      </tr>
+      <tr>
+        <td>X-RateLimit-Remaining</td>
+        <td>The number of requests remaining in the current rate limit period.</td>
+      </tr>
+      <tr>
+        <td>X-RateLimit-Reset</td>
+        <td>The time at which the current rate limit window resets in <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a> format.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
